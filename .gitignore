@@ -1,2 +1,7 @@
 # dependencies
 /node_modules
+
+# production
+/build
+/build-platform
+/storybook-static
