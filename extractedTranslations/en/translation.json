@@ -1,0 +1,10 @@
+{
+  "about": {
+    "site": "site"
+  },
+  "home": "home",
+  "lang": "lang",
+  "main": {
+    "page": "page"
+  }
+}

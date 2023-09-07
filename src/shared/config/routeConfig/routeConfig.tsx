@@ -1,5 +1,5 @@
-import { AboutPage, MainPage } from "pages/ui"
-import { RouteProps } from "react-router-dom"
+import { AboutPage, MainPage } from 'pages/ui';
+import { RouteProps } from 'react-router-dom';
 
 export enum AppRoutes {
     MAIN = 'main',
@@ -9,7 +9,7 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
-}
+};
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.MAIN]: {
@@ -20,4 +20,4 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
         path: RoutePath[AppRoutes.ABOUT],
         element: <AboutPage />,
     },
-}
+};

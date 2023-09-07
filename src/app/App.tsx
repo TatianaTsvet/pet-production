@@ -6,17 +6,17 @@ import { Sidebar } from 'widgets/sidebar/ui';
 import { Suspense } from 'react';
 
 const App = () => {
-    const {theme} = useTheme();
+    const { theme } = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
-               <Navbar />  
+                <Navbar />
                 <div className="content-page">
                     <Sidebar />
                     <AppRouter />
-                </div> 
-            </Suspense>            
+                </div>
+            </Suspense>
         </div>
     );
 };
