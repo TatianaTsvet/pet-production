@@ -4,7 +4,14 @@ import { BuildOptions } from "./types/config";
 
 export default function buildLoaders(options: BuildOptions):webpack.RuleSetRule[] {
     const { isDev } = options;
-    const cssLoaders = {
+
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
+    }
+
+
+    const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
@@ -17,7 +24,7 @@ export default function buildLoaders(options: BuildOptions):webpack.RuleSetRule[
             options: {
                 modules: {
                     auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-                    localIdentName: isDev ? '[path][name]__[local]--[hash:base64: 5]' : '[hash:base64: 8]', 
+                    localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]', 
                 }
                 
             }
@@ -26,13 +33,28 @@ export default function buildLoaders(options: BuildOptions):webpack.RuleSetRule[
           "sass-loader",
         ],
       };
+
+      const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader'
+            }
+        ]
+    }
     
     // Если не используется typescript
     // нужен babel-loader
-    const typeScriptLoader = {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            }
-    return [typeScriptLoader, cssLoaders];
+    const typescriptLoader = {
+      test: /\.tsx?$/,
+      use: 'ts-loader',
+      exclude: /node_modules/,
+    }
+
+    return [
+        fileLoader,
+        svgLoader,
+        typescriptLoader,
+        cssLoader,
+    ]
 }
