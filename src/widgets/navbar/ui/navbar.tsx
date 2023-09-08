@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { classNames } from 'shared/lib';
+import { classNames } from 'shared/lib/classNames';
 import { AppLink, AppLinkTheme } from 'shared';
 import { useTranslation } from 'react-i18next';
 import cls from './navbar.module.scss';
