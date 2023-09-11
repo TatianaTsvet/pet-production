@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import { LangSwitcher, ThemeSwitcher } from 'widgets';
 import { Button } from 'shared/ui';
@@ -18,6 +18,7 @@ const Sidebar: FC<ISidebarProps> = ({ className }) => {
 
     return (
         <div
+            data-testId="sidebar"
             className={
                 classNames(
                     cls.sidebar,
@@ -26,7 +27,7 @@ const Sidebar: FC<ISidebarProps> = ({ className }) => {
                 )
             }
         >
-            <Button onClick={onToggle}>{t('toggle')}</Button>
+            <Button data-testId="sidebar-toggle" onClick={onToggle}>{t('toggle')}</Button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang_button} />
