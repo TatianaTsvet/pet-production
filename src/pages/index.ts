@@ -1,1 +1,3 @@
-export * from './ui';
+export * from './aboutPage';
+export * from './mainPage';
+export * from './notFoundPage';

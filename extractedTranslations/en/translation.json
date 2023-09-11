@@ -2,9 +2,27 @@
   "about": {
     "site": "site"
   },
+  "error": {
+    "name": "name",
+    "page": {
+      "upload": "upload"
+    },
+    "unexpected": "unexpected"
+  },
   "home": "home",
   "lang": "lang",
   "main": {
     "page": "page"
-  }
+  },
+  "page": {
+    "not": {
+      "found": "found"
+    }
+  },
+  "throw": {
+    "error": "error"
+  },
+  "toggle": "toggle",
+  "Обновить страницу": "Обновить страницу",
+  "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка"
 }
