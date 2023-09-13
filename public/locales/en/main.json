@@ -2,5 +2,6 @@
   "translation": "Translation",
   "main.page": "Main Page",
   "home": "main",
-  "page.not.found": "Page is not found"
+  "page.not.found": "Page is not found",
+  "page.loading": "Loading"
 }
