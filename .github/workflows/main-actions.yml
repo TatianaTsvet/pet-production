@@ -7,11 +7,12 @@ on:
     branches: ["main"]
 jobs:
   build:
+    runs-on: [ubuntu-latest, windows-2019]
     strategy:
       matrix:
         os: [ubuntu-latest, windows-2019]
         node-version: [17.x]
-    runs-on: ${{ matrix.os }}
+    
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
