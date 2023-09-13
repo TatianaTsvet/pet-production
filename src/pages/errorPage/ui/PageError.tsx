@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, classNames } from 'shared';
+import { Button } from 'shared';
+import { classNames } from 'shared/lib';
 import cls from './pageError.module.scss';
 
 interface IPageErrorProps {
