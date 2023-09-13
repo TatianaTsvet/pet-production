@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
-import { buildCssLoader } from './loaders/buildCssLoader';
+import { buildCssLoader } from './loaders';
 
 export default function buildLoaders(options: BuildOptions):webpack.RuleSetRule[] {
     const { isDev } = options;
