@@ -1,9 +1,9 @@
 import './styles/index.scss';
 import { classNames } from 'shared/lib/classNames';
 import { useTheme, AppRouter } from 'app/providers';
-import { Navbar } from 'widgets';
-import { Sidebar } from 'widgets/sidebar/ui';
 import { Suspense } from 'react';
+import { Navbar } from 'widgets/navbar';
+import { Sidebar } from 'widgets/sidebar';
 
 const App = () => {
     const { theme } = useTheme();
