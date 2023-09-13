@@ -7,7 +7,7 @@ import { BuildOptions } from './types/config';
 
 export default function buildPlugins({ paths, isDev }: BuildOptions)
 :webpack.WebpackPluginInstance[] {
-    return [
+    const plugins = [
         new HTMLWebpackPlugin({
             template: paths.html,
         }),
@@ -19,9 +19,14 @@ export default function buildPlugins({ paths, isDev }: BuildOptions)
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-        new ReactRefreshWebpackPlugin(),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }),
     ];
+
+    if (isDev) {
+        plugins.push(new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        }));
+        plugins.push(new ReactRefreshWebpackPlugin());
+    }
+
+    return plugins;
 }
