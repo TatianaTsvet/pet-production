@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ThemeSwitcher from './ThemeSwitcher';
 import { Theme } from 'app/providers';
 import { ThemeDecorator } from 'shared/config/storybook';
+import ThemeSwitcher from './ThemeSwitcher';
 
 export default {
     title: 'widget/ThemeSwitcher',
@@ -19,4 +19,4 @@ Normal.args = {};
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+// Dark.decorators = [ThemeDecorator(Theme.DARK)];

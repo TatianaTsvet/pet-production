@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers';
-import Loader from './Loader';
 import { ThemeDecorator } from 'shared/config/storybook';
+import Loader from './Loader';
 
 export default {
     title: 'widget/Loader',
@@ -22,4 +22,4 @@ Normal.args = {};
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+// Dark.decorators = [ThemeDecorator(Theme.DARK)];

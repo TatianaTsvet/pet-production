@@ -1,11 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook';
-import { Theme } from 'app/providers';
 import PageError from './PageError';
 
 export default {
-    title: 'widget/ErrorPage',
+    title: 'page/ErrorPage',
     component: PageError,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -19,4 +17,4 @@ Light.args = {};
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+// Dark.decorators = [ThemeDecorator(Theme.DARK)];
