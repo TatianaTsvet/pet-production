@@ -40,7 +40,7 @@
   },
   "include": [
     "./config/jest/setupTests.ts",
-    "./config/build//loaders/buildCssLoader.ts",
+    "./config/build/loaders/buildCssLoader.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
   ]

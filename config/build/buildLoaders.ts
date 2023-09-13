@@ -1,6 +1,6 @@
 import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
-import { buildCssLoader } from './loaders/buildCssLoader';
 
 export default function buildLoaders(options: BuildOptions):webpack.RuleSetRule[] {
     const { isDev } = options;
