@@ -15,6 +15,7 @@
     "page": "page"
   },
   "page": {
+    "loading": "loading",
     "not": {
       "found": "found"
     }
