@@ -1,1 +1,1 @@
-export * from './renderWithTranslation';
+export * from './componentRender';
