@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
     FC,
-    PropsWithChildren,
+    PropsWithChildren, MouseEvent,
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Portal } from 'widgets/portal';
@@ -46,7 +46,7 @@ const Modal: FC<IModalProps> = (props: PropsWithChildren<IModalProps>) => {
         }
     }, [closeHandler]);
 
-    const onContentClick = (e: React.MouseEvent) => {
+    const onContentClick = (e: MouseEvent) => {
         e.stopPropagation();
     };
 

@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames';
 import { useTheme, AppRouter } from 'app/providers';
 import { Suspense } from 'react';
-import { Navbar } from 'widgets/navbar';
-import { Sidebar } from 'widgets/sidebar';
+import { Navbar } from 'widgets/navbar/ui';
+import { Sidebar } from 'widgets/sidebar/ui';
 
 const App = () => {
     const { theme } = useTheme();
