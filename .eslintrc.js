@@ -38,7 +38,7 @@ module.exports = {
         'linebreak-style': 'off',
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
-            ignoreAttribute: ['data-testId', 'to'],
+            ignoreAttribute: ['data-testid', 'to'],
             // ignoreAllAttributes: true,
         }],
     },

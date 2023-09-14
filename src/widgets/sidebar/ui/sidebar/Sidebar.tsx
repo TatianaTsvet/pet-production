@@ -1,38 +1,70 @@
-import React, { FC, useState } from 'react';
-import { classNames } from 'shared/lib/classNames';
-import { LangSwitcher, ThemeSwitcher } from 'widgets';
-import { Button } from 'shared/ui';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useState } from 'react';
+
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import AboutIcon from 'shared/asserts/icons/about.svg';
+import HomeIcon from 'shared/asserts/icons/home.svg';
 import { useTranslation } from 'react-i18next';
+import {
+    Button, AppLink, AppLinkTheme, ButtonSize, ButtonTheme,
+} from 'shared';
+import { ThemeSwitcher } from 'widgets/themeSwitcher';
+import LangSwitcher from 'widgets/langSwitcher/ui/LangSwitcher';
 import cls from './sidebar.module.scss';
 
-interface ISidebarProps {
+interface SidebarProps {
     className?: string;
 }
 
-const Sidebar: FC<ISidebarProps> = ({ className }) => {
+export const Sidebar = ({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
-    const { t } = useTranslation();
+    const { t } = useTranslation(['about', 'main']);
+
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
 
     return (
         <div
-            data-testId="sidebar"
-            className={
-                classNames(
-                    cls.sidebar,
-                    { [cls.collapsed]: collapsed },
-                    [className],
-                )
-            }
+            data-testd="sidebar"
+            className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
-            <Button data-testId="sidebar-toggle" onClick={onToggle}>{t('toggle')}</Button>
+            <Button
+                data-testid="sidebar-toggle"
+                onClick={onToggle}
+                className={cls.collapseBtn}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
+                size={ButtonSize.L}
+                square
+            >
+                {collapsed ? '>' : '<'}
+            </Button>
+            <div className={cls.items}>
+                <AppLink
+                    theme={AppLinkTheme.SECONDARY}
+                    to={RoutePath.main}
+                    className={cls.item}
+                >
+                    <HomeIcon className={cls.icon} />
+                    <span className={cls.link}>
+                        {t('main.page', { ns: 'main' })}
+                    </span>
+                </AppLink>
+                <AppLink
+                    theme={AppLinkTheme.SECONDARY}
+                    to={RoutePath.about}
+                    className={cls.item}
+                >
+                    <AboutIcon className={cls.icon} />
+                    <span className={cls.link}>
+                        {t('about.site', { ns: 'about' })}
+                    </span>
+                </AppLink>
+            </div>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher className={cls.lang_button} />
+                <LangSwitcher short={collapsed} className={cls.lang} />
             </div>
         </div>
     );
 };
-export default Sidebar;

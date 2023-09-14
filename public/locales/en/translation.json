@@ -2,5 +2,6 @@
   "test.example": "Test example",
   "translate": "Translate",
   "lang": "English",
+  "lang.short": "EN",
   "toggle": "toggle"
 }

@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { withTranslation } from 'react-i18next';
 import React from 'react';
 import { renderWithTranslation } from 'shared/lib/tests';
-import Sidebar from './Sidebar';
+import { Sidebar } from './Sidebar';
 
 describe('sidebar', () => {
     test('with only one param', () => {

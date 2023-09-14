@@ -70,7 +70,7 @@ export default function buildLoaders(options: BuildOptions):webpack.RuleSetRule[
         fileLoader,
         svgLoader,
         // babel is unnecessary if typescriptLoader
-        babelLoader,
+        // babelLoader,
         typescriptLoader,
         cssLoader,
 
