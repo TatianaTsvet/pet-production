@@ -7,7 +7,7 @@ interface ILangSwitcherProps {
     short?: boolean;
 }
 
-const LangSwitcher = ({ className, short }: ILangSwitcherProps) => {
+export const LangSwitcher = ({ className, short }: ILangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const onToggle = async () => {
@@ -25,5 +25,3 @@ const LangSwitcher = ({ className, short }: ILangSwitcherProps) => {
 
     );
 };
-
-export default LangSwitcher;
