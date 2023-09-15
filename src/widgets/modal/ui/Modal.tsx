@@ -39,7 +39,6 @@ const Modal: FC<IModalProps> = (props: PropsWithChildren<IModalProps>) => {
         }
     }, [onClose]);
 
-    // Новые ссылки!!!
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
             closeHandler();
@@ -64,12 +63,11 @@ const Modal: FC<IModalProps> = (props: PropsWithChildren<IModalProps>) => {
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
-        [cls[theme]]: true,
     };
 
     return (
         <Portal>
-            <div className={classNames(cls.modal, mods, [className])}>
+            <div className={classNames(cls.modal, mods, [className, theme])}>
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div
                         className={cls.content}

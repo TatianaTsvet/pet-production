@@ -1,1 +1,1 @@
-export * from './componrntRender';
+export * from './componentRender';
