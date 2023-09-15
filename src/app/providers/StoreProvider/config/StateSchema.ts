@@ -1,5 +1,7 @@
-import { UserSchema } from 'entities/user';
+import { IUserSchema } from 'entities/user';
+import { ILoginSchema } from 'features';
 
 export interface IStateSchema {
-    user: UserSchema;
+    user: IUserSchema;
+    loginForm?: ILoginSchema;
 }

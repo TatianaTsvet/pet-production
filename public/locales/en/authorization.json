@@ -1,5 +1,6 @@
 {
     "enter.user.name": "Enter username",
     "enter.password": "Enter password",
-    "enter.button": "Enter"
+    "enter.button": "Enter",
+    "form.auth.title": "Form Authorization"
 }

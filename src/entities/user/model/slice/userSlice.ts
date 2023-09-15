@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { UserSchema } from '../types/user';
+import { IUserSchema } from '../types/user';
 
-const initialState: UserSchema = {};
+const initialState: IUserSchema = {};
 
 export const userSlice = createSlice({
     name: 'user',
