@@ -5,7 +5,6 @@ import {
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Portal } from 'widgets/portal';
-import { useTheme } from 'app/providers';
 import cls from './modal.module.scss';
 
 interface IModalProps {
@@ -13,6 +12,9 @@ interface IModalProps {
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    // for decreasing bundles.
+    // Open modals on mounting
+    isLazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
@@ -23,11 +25,16 @@ const Modal: FC<IModalProps> = (props: PropsWithChildren<IModalProps>) => {
         children,
         isOpen,
         onClose,
+        isLazy,
     } = props;
 
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
-    const { theme } = useTheme();
+
+    useEffect(() => {
+        if (isOpen) setIsMounted(true);
+    }, [isOpen, isMounted]);
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -64,6 +71,10 @@ const Modal: FC<IModalProps> = (props: PropsWithChildren<IModalProps>) => {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
+
+    if (isLazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>

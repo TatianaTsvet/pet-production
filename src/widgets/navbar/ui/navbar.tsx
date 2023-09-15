@@ -5,6 +5,7 @@ import {
 } from 'shared';
 import { useTranslation } from 'react-i18next';
 import { Modal } from 'widgets/modal';
+import { LoginModal } from 'features';
 import cls from './navbar.module.scss';
 
 interface INavbarProps {
@@ -15,22 +16,22 @@ export const Navbar: FC<INavbarProps> = ({ className }) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
 
-    const onToggleModal = useCallback(() => {
-        setIsAuthModal((prev) => !prev);
-    }, []);
+    const onOpenModal = useCallback(() => {
+        setIsAuthModal(!isAuthModal);
+    }, [isAuthModal]);
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
             <div className={cls.links}>
                 <Button
                     theme={ButtonTheme.CLEAR_INVERTED}
                     className={cls.links}
-                    onClick={onToggleModal}
+                    onClick={onOpenModal}
                 >
                     {t('enter')}
                 </Button>
-                <Modal isOpen={isAuthModal} onClose={onToggleModal}>
+                <LoginModal isOpen={isAuthModal} onClose={onOpenModal}>
                     {t('enter')}
-                </Modal>
+                </LoginModal>
             </div>
         </div>
     );

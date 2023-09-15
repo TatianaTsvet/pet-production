@@ -9,8 +9,8 @@ import {
     Button, AppLink, AppLinkTheme, ButtonSize, ButtonTheme,
 } from 'shared';
 import { ThemeSwitcher } from 'widgets/themeSwitcher';
-import cls from './sidebar.module.scss';
 import { LangSwitcher } from 'widgets/langSwitcher';
+import cls from './sidebar.module.scss';
 
 interface SidebarProps {
     className?: string;

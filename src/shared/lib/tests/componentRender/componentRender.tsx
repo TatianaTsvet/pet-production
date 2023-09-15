@@ -8,7 +8,7 @@ import { DeepPartial } from '@reduxjs/toolkit';
 
 export interface IComponentRenderOptions {
     route?: string;
-    initialState?: DeepPartial<IStateSchema>
+    initialState?: IStateSchema;
 }
 
 export function componentRender(component: ReactNode, options: IComponentRenderOptions = {}) {
@@ -22,8 +22,8 @@ export function componentRender(component: ReactNode, options: IComponentRenderO
             <MemoryRouter initialEntries={[route]}>
                 <I18nextProvider i18n={i18nForTests}>
                     {component}
-                </I18nextProvider>            
+                </I18nextProvider>
             </MemoryRouter>
-        </StoreProvider>        
+        </StoreProvider>,
     );
 }
