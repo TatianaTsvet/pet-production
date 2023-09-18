@@ -5,9 +5,20 @@ const path = require('path');
 const server = jsonServer.create();
 
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
+// cors
+const cors = require('cors');
 
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
+server.use(
+    cors({
+        origin: true,
+        credentials: true,
+        preflightContinue: false,
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    }),
+);
+server.options('*', cors());
 
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
