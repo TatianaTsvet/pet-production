@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { classNames } from 'shared/lib';
 import { Modal } from 'widgets/modal';
+import { useTheme } from 'app/providers';
 import { LoginForm } from '../loginForm';
 
 interface ILoginModalProps {
@@ -9,15 +10,18 @@ interface ILoginModalProps {
     onClose: () => void;
 }
 
-const LoginModal: FC<ILoginModalProps> = ({ className, isOpen, onClose }) => (
-    <Modal
-        className={classNames('', {}, [className])}
-        isOpen={isOpen}
-        onClose={onClose}
-        isLazy
-    >
-        <LoginForm />
-    </Modal>
-);
+const LoginModal: FC<ILoginModalProps> = ({ className, isOpen, onClose }) => {
+    const { theme } = useTheme();
+    return (
+        <Modal
+            className={classNames('', {}, [className, theme])}
+            isOpen={isOpen}
+            onClose={onClose}
+            isLazy
+        >
+            <LoginForm />
+        </Modal>
+    );
+};
 
 export default LoginModal;

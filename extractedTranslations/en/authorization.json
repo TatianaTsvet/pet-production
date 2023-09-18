@@ -5,5 +5,10 @@
     "user": {
       "name": ""
     }
+  },
+  "form": {
+    "auth": {
+      "title": ""
+    }
   }
 }

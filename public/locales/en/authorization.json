@@ -2,5 +2,6 @@
     "enter.user.name": "Enter username",
     "enter.password": "Enter password",
     "enter.button": "Enter",
-    "form.auth.title": "Form Authorization"
+    "form.auth.title": "Form Authorization",
+    "error.login.or.password": "You entered wrong login or password"
 }

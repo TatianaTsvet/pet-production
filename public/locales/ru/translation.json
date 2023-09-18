@@ -5,5 +5,6 @@
   "toggle": "переключить",
   "lang.short": "РУ",
   "enter": "Войти",
+  "log.out": "Выйти",
   "form.auth.title": "Форма Авторизации"
 }

@@ -36,7 +36,7 @@ const LoginForm: FC<ILoginFormProps> = memo((props: ILoginFormProps) => {
         <div className={classNames(cls.loginForm, {}, [className])}>
             <Text title={t('form.auth.title')} />
             {error && (
-                <Text text={error} theme={TextTheme.ERROR} />
+                <Text text={t('error.login.or.password')} theme={TextTheme.ERROR} />
             )}
             <Input
                 autofocus

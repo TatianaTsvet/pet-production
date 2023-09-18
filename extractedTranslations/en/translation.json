@@ -4,6 +4,11 @@
   },
   "enter": "",
   "error": {
+    "login": {
+      "or": {
+        "password": ""
+      }
+    },
     "name": "name",
     "page": {
       "upload": "upload"
@@ -12,6 +17,9 @@
   },
   "home": "home",
   "lang": "lang",
+  "log": {
+    "out": ""
+  },
   "main": {
     "page": "page"
   },

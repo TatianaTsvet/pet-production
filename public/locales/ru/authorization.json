@@ -1,5 +1,7 @@
 {
     "enter.user.name": "Введите имя пользователя",
     "enter.password": "Введите пароль",
-    "enter.button": "Войти"
+    "enter.button": "Войти",
+    "form.auth.title": "Форма Авторизации",
+    "error.login.or.password": "Вы ввели неверный логин или пароль"
 }
