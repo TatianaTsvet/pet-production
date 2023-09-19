@@ -47,9 +47,11 @@ export const Navbar: FC<INavbarProps> = ({ className }) => {
                         >
                             {t('enter')}
                         </Button>
-                        <LoginModal isOpen={isAuthModal} onClose={onOpenModal}>
-                            {t('enter')}
-                        </LoginModal>
+                        {isAuthModal && (
+                            <LoginModal isOpen={isAuthModal} onClose={onOpenModal}>
+                                {t('enter')}
+                            </LoginModal>
+                        )}
                     </>
                 )}
             </div>

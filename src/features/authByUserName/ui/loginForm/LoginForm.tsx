@@ -4,21 +4,31 @@ import { useTranslation } from 'react-i18next';
 import {
     Button, Input, ButtonTheme, Text, TextTheme,
 } from 'shared/ui';
-import { useDispatch, useSelector } from 'react-redux';
-import { getLoginState, loginActions, loginByUserName } from 'features/authByUserName';
+import { useDispatch, useSelector, useStore } from 'react-redux';
+import { DynamicModuleLoader, useDynamicModuleLoader } from 'shared/lib';
+import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader';
+import {
+    loginReducer, getLoginPassword, getLoginError, loginActions, loginByUserName, getLoginUserName, getLoginLoading,
+} from 'features/authByUserName/module';
 import cls from './loginForm.module.scss';
 
 interface ILoginFormProps {
  className?: string;
 }
 
-const LoginForm: FC<ILoginFormProps> = memo((props: ILoginFormProps) => {
-    const { className } = props;
+const initialReducers: ReducersList = {
+    loginForm: loginReducer,
+};
+
+const LoginForm: FC<ILoginFormProps> = memo(({ className }: ILoginFormProps) => {
     const { t } = useTranslation('authorization');
     const dispatch = useDispatch();
-    const {
-        userName, password, error, isLoading,
-    } = useSelector(getLoginState);
+    const userName = useSelector(getLoginUserName);
+    const password = useSelector(getLoginPassword);
+    const isLoading = useSelector(getLoginLoading);
+    const error = useSelector(getLoginError);
+
+    useDynamicModuleLoader(initialReducers, true);
 
     const onChangeUserName = useCallback((value: string) => {
         dispatch(loginActions.setUserName(value));
@@ -33,6 +43,10 @@ const LoginForm: FC<ILoginFormProps> = memo((props: ILoginFormProps) => {
     }, [dispatch, password, userName]);
 
     return (
+        // <DynamicModuleLoader
+        //     removeAfterUnmount
+        //     reducers={initialReducers}
+        // >
         <div className={classNames(cls.loginForm, {}, [className])}>
             <Text title={t('form.auth.title')} />
             {error && (
@@ -62,6 +76,7 @@ const LoginForm: FC<ILoginFormProps> = memo((props: ILoginFormProps) => {
                 {t('enter.button')}
             </Button>
         </div>
+        // </DynamicModuleLoader>
     );
 });
 

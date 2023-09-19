@@ -1,2 +1,3 @@
 export { createReduxStore } from './store';
-export * from './StateSchema';
+export * from './stateTypes';
+export { createReducerManager } from './reduceManager';

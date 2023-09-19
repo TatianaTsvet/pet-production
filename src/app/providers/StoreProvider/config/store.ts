@@ -1,17 +1,28 @@
 import { ReducersMapObject, configureStore } from '@reduxjs/toolkit';
-import { loginReducer } from 'features';
 import { userReducer } from 'entities/user';
-import { IStateSchema } from './StateSchema';
+import { createReducerManager } from './reduceManager';
+import { IReducerManager, IStateSchema } from './stateTypes';
 
-export function createReduxStore(initialState?: IStateSchema) {
+export function createReduxStore(
+    initialState?: IStateSchema,
+    asyncReducers?: ReducersMapObject<IStateSchema>,
+) {
     const rootReducer: ReducersMapObject<IStateSchema> = {
+        ...asyncReducers,
         user: userReducer,
-        loginForm: loginReducer,
+
     };
 
-    return configureStore<IStateSchema>({
-        reducer: rootReducer,
+    const reducerManager = createReducerManager(rootReducer);
+
+    // конфигурируем хранилище
+    const store = configureStore<IStateSchema>({
+        reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
         preloadedState: initialState,
     });
+    // @ts-ignore
+    store.reducerManager = reducerManager;
+
+    return store;
 }
