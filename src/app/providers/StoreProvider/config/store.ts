@@ -1,5 +1,6 @@
 import { ReducersMapObject, configureStore } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/user';
+import { API } from 'shared/api';
 import { createReducerManager } from './reduceManager';
 import { IReducerManager, IStateSchema } from './stateTypes';
 
@@ -20,9 +21,18 @@ export function createReduxStore(
         reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
         preloadedState: initialState,
+        middleware: (getDefaultMiddleware: (arg0: { thunk: { extraArgument: { api: any; }; }; }) => any) => getDefaultMiddleware({
+            thunk: {
+                extraArgument: {
+                    api: API,
+                },
+            },
+        }),
     });
     // @ts-ignore
     store.reducerManager = reducerManager;
 
     return store;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

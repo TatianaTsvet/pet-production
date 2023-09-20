@@ -4,6 +4,7 @@ import { IStateSchema, StoreProvider } from 'app/providers';
 
 // const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
 //     loginForm: loginReducer,
+//     profile: profileReducer,
 // };
 
 // export const StoreDecorator = (

@@ -1,1 +1,2 @@
-export { useDynamicModuleLoader } from './useDynamicModuleLoader';
+export { useDynamicModuleLoader, ReducersList } from './useDynamicModuleLoader';
+export { useAppDispatch } from './useAppDispatch';

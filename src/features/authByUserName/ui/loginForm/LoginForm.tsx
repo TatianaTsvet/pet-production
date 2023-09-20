@@ -4,25 +4,32 @@ import { useTranslation } from 'react-i18next';
 import {
     Button, Input, ButtonTheme, Text, TextTheme,
 } from 'shared/ui';
-import { useDispatch, useSelector, useStore } from 'react-redux';
-import { DynamicModuleLoader, useDynamicModuleLoader } from 'shared/lib';
+import { useSelector } from 'react-redux';
+import { useAppDispatch, useDynamicModuleLoader } from 'shared/lib';
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader';
 import {
-    loginReducer, getLoginPassword, getLoginError, loginActions, loginByUserName, getLoginUserName, getLoginLoading,
+    loginReducer,
+    getLoginPassword,
+    getLoginError,
+    loginActions,
+    loginByUserName,
+    getLoginUserName,
+    getLoginLoading,
 } from 'features/authByUserName/module';
 import cls from './loginForm.module.scss';
 
 interface ILoginFormProps {
  className?: string;
+ onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginForm: FC<ILoginFormProps> = memo(({ className }: ILoginFormProps) => {
+const LoginForm: FC<ILoginFormProps> = memo(({ className, onSuccess }: ILoginFormProps) => {
     const { t } = useTranslation('authorization');
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const userName = useSelector(getLoginUserName);
     const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginLoading);
@@ -38,9 +45,10 @@ const LoginForm: FC<ILoginFormProps> = memo(({ className }: ILoginFormProps) => 
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onLoginClick = useCallback(() => {
-        dispatch(loginByUserName({ userName, password }));
-    }, [dispatch, password, userName]);
+    const onLoginClick = useCallback(async () => {
+        const res = await dispatch(loginByUserName({ userName, password }));
+        if (res.meta.requestStatus === 'fulfilled') onSuccess();
+    }, [dispatch, onSuccess, password, userName]);
 
     return (
         // <DynamicModuleLoader

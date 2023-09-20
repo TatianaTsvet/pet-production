@@ -1,29 +1,38 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "json-server",
-      "userId": 1
+      "userId": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "json-server",
-      "userId": 2
+      "userId": "2"
     }
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "body": "some comment",
-      "postId": 1
+      "postId": "1"
     }
   ],
   "users": [
     {
-      "id": 1,
-      "userName": "admin",
+      "id": "1",
+      "username": "admin",
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Tatiana",
+    "lastName": "Tsvetynina",
+    "age": 30,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "userName": "admin",
+    "avatar": "https://kartinkin.net/pics/uploads/posts/2022-07/1658514370_58-kartinkin-net-p-anime-tyan-krasivie-arti-oboi-65.jpg"
+  }
 }
