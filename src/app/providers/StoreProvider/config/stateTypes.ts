@@ -1,13 +1,18 @@
 import {
     AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject, Store,
 } from '@reduxjs/toolkit';
+import { Axios, AxiosInstance } from 'axios';
 import { IUserSchema } from 'entities/user';
 import { ILoginSchema } from 'features/authByUserName';
+import { NavigateOptions } from 'react-router';
+import { Href } from 'history';
+import { IProfileSchema } from 'entities/profile';
 
 export interface IStateSchema {
     user: IUserSchema;
     // async reducers
     loginForm?: ILoginSchema;
+    profile?: IProfileSchema
 }
 
 export type StateSchemaKey = keyof IStateSchema
@@ -21,4 +26,14 @@ export interface IReducerManager {
 
 export interface IReduxStoreWithManager extends EnhancedStore<ILoginSchema> {
     reducerManager: IReducerManager;
+}
+
+export interface IThunkExtraArg {
+    api: AxiosInstance;
+    navigate: (to: Href, options?: NavigateOptions) => void;
+}
+
+export interface IThunkConfig<T> {
+    rejectValue: T;
+    extra: IThunkExtraArg;
 }

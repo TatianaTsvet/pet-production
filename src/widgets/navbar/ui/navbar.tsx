@@ -22,9 +22,13 @@ export const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
 
+    const onCloseModal = useCallback(() => {
+        setIsAuthModal(false);
+    }, []);
+
     const onOpenModal = useCallback(() => {
-        setIsAuthModal(!isAuthModal);
-    }, [isAuthModal]);
+        setIsAuthModal(true);
+    }, []);
 
     const onLogOut = useCallback(() => {
         dispatch(userActions.logout());
@@ -51,9 +55,7 @@ export const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
                             {t('enter')}
                         </Button>
                         {isAuthModal && (
-                            <LoginModal isOpen={isAuthModal} onClose={onOpenModal}>
-                                {t('enter')}
-                            </LoginModal>
+                            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
                         )}
                     </>
                 )}
