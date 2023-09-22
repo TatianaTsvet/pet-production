@@ -20,7 +20,14 @@ export function buildCssLoader(isDev: boolean) {
                     },
                 },
             },
+            {
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: true,
+                },
+            },
             'sass-loader',
+
         ],
     };
 }

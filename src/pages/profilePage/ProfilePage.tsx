@@ -1,7 +1,6 @@
 import { useEffect, type FC, type PropsWithChildren } from 'react';
 import { classNames, useDynamicModuleLoader } from 'shared/lib';
-import { useTranslation } from 'react-i18next';
-import { fetchProfileData, profileReducer } from 'entities/profile';
+import { ProfileCard, fetchProfileData, profileReducer } from 'entities/profile';
 import { ReducersList, useAppDispatch } from 'shared/lib/hooks';
 
 const reducers: ReducersList = {
@@ -13,7 +12,6 @@ interface IProfilePageProps {
 }
 
 const ProfilePage: FC<IProfilePageProps> = ({ className }: PropsWithChildren<IProfilePageProps>) => {
-    const { t } = useTranslation('profile.page');
     const dispatch = useAppDispatch();
 
     useDynamicModuleLoader(reducers, true);
@@ -24,7 +22,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }: PropsWithChildren<IPr
 
     return (
         <div className={classNames('', {}, [className])}>
-            {t('profile.page.name')}
+            <ProfileCard />
         </div>
     );
 };

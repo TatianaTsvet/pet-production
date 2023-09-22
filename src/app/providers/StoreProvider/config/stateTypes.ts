@@ -30,7 +30,7 @@ export interface IReduxStoreWithManager extends EnhancedStore<ILoginSchema> {
 
 export interface IThunkExtraArg {
     api: AxiosInstance;
-    navigate: (to: Href, options?: NavigateOptions) => void;
+    navigate?: (to: Href, options?: NavigateOptions) => void;
 }
 
 export interface IThunkConfig<T> {

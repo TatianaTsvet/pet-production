@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { Story } from '@storybook/react';
 import { IStateSchema, StoreProvider } from 'app/providers';
 import { I18nextProvider } from 'react-i18next';

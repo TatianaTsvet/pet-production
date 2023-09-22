@@ -4,7 +4,7 @@ import {
     useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared';
+import { Button } from 'shared/ui';
 
 // for testing error boundaries
 const BugButton: FC = () => {

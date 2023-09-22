@@ -5,7 +5,7 @@ import { classNames } from 'shared/lib/classNames';
 import {
     Button,
     ButtonTheme,
-} from 'shared';
+} from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features';
 import { useDispatch, useSelector } from 'react-redux';

@@ -1,7 +1,7 @@
 import React, { FC, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Route, Routes } from 'react-router-dom';
-import { routeConfig } from 'shared';
+import { routeConfig } from 'shared/config';
 
 const AppRouter: FC = () => {
     const { t } = useTranslation('main');

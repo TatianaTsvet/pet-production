@@ -6,44 +6,38 @@ import {
 // TODO refactoring
 describe('getLoginError test', () => {
     test('should return error', () => {
-        const state: IStateSchema = {
+        const state: DeepPartial<IStateSchema> = {
             loginForm: {
                 error: 'error',
-                userName: '',
-                password: '',
-                isLoading: false,
             },
-            user: undefined,
+
         };
-        expect(getLoginError(state)).toEqual('error');
+        expect(getLoginError(state as IStateSchema)).toEqual('error');
     });
     test('should work with empty state', () => {
-        const state: IStateSchema = { user: undefined };
-        expect(getLoginError(state)).toEqual(undefined);
+        const state: DeepPartial<IStateSchema> = {};
+        expect(getLoginError(state as IStateSchema)).toEqual(undefined);
     });
 });
 
 describe('getLoginLoading test', () => {
     test('should return true', () => {
-        const state: IStateSchema = {
+        const state: DeepPartial<IStateSchema> = {
             loginForm: {
                 isLoading: true,
-                userName: '',
-                password: '',
             },
-            user: undefined,
         };
-        expect(getLoginLoading(state)).toEqual(true);
+        expect(getLoginLoading(state as IStateSchema)).toEqual(true);
     });
     test('should work with empty state', () => {
-        const state: IStateSchema = { user: undefined };
-        expect(getLoginLoading(state)).toEqual(false);
+        const state: DeepPartial<IStateSchema> = {};
+        expect(getLoginLoading(state as IStateSchema)).toEqual(false);
     });
 });
 
 describe('getLoginPassword test', () => {
     test('should return true', () => {
-        const state: IStateSchema = {
+        const state: DeepPartial<IStateSchema> = {
             loginForm: {
                 userName: '',
                 password: '123',
@@ -51,17 +45,17 @@ describe('getLoginPassword test', () => {
             },
             user: undefined,
         };
-        expect(getLoginPassword(state)).toEqual('123');
+        expect(getLoginPassword(state as IStateSchema)).toEqual('123');
     });
     test('should work with empty state', () => {
-        const state: IStateSchema = { user: undefined };
-        expect(getLoginPassword(state)).toEqual('');
+        const state: DeepPartial<IStateSchema> = { user: undefined };
+        expect(getLoginPassword(state as IStateSchema)).toEqual('');
     });
 });
 
 describe('getLoginUserName test', () => {
     test('should return true', () => {
-        const state: IStateSchema = {
+        const state: DeepPartial<IStateSchema> = {
             loginForm: {
                 userName: 'admin',
                 password: '',
@@ -69,10 +63,10 @@ describe('getLoginUserName test', () => {
             },
             user: undefined,
         };
-        expect(getLoginUserName(state)).toEqual('admin');
+        expect(getLoginUserName(state as IStateSchema)).toEqual('admin');
     });
     test('should work with empty state', () => {
-        const state: IStateSchema = { user: undefined };
-        expect(getLoginUserName(state)).toEqual('');
+        const state: DeepPartial<IStateSchema> = { user: undefined };
+        expect(getLoginUserName(state as IStateSchema)).toEqual('');
     });
 });

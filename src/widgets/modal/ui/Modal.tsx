@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import {
     FC,
     PropsWithChildren, MouseEvent,
@@ -67,7 +67,7 @@ const Modal: FC<IModalProps> = (props: PropsWithChildren<IModalProps>) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
