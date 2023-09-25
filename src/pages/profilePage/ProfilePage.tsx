@@ -3,12 +3,24 @@ import {
 } from 'react';
 import { classNames, useDynamicModuleLoader } from 'shared/lib';
 import {
-    ProfileCard, fetchProfileData, getProfileData, getProfileError, getProfileLoading, getProfileReadonly, profileActions, profileReducer,
+    EValidateProfileError,
+    ProfileCard,
+    fetchProfileData,
+    getProfileData,
+    getProfileError,
+    getProfileLoading,
+    getProfileReadonly,
+    getProfileValidateErrors,
+    profileActions,
+    profileReducer,
 } from 'entities/profile';
 import { ReducersList, useAppDispatch } from 'shared/lib/hooks';
 import { useSelector } from 'react-redux';
 import { ECurrency } from 'entities/currency';
 import { ECountry } from 'entities/country';
+import { Text, TextTheme } from 'shared/ui';
+import { useTranslation } from 'react-i18next';
+import { ProfilePageHeader } from './profilePageHeader';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -23,8 +35,10 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }: PropsWithChildren<IPr
     const form = useSelector(getProfileData);
     const isLoading = useSelector(getProfileLoading);
     const error = useSelector(getProfileError);
+    const validateErrors = useSelector(getProfileValidateErrors);
     const readonly = useSelector(getProfileReadonly);
 
+    const { t } = useTranslation('profile');
     useDynamicModuleLoader(reducers, true);
 
     useEffect(() => {
@@ -69,6 +83,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }: PropsWithChildren<IPr
                 profileData={form}
                 isLoading={isLoading}
                 error={error}
+                validateErrors={validateErrors}
                 readonly={readonly}
                 onChangeFirstName={onChangeFirstName}
                 onChangeLastName={onChangeLastName}

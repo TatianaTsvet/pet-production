@@ -9,5 +9,10 @@
   "profile.age": "Ваш возраст",
   "profile.city": "Город",
   "profile.enter.user.name": "Введите имя пользователя",
-  "profile.enter.avatar.link": "Введите ссылку на аватар"
+  "profile.enter.avatar.link": "Введите ссылку на аватар",
+  "server.error": "Серверная ошибка при сохранении",
+  "region.error": "Некорректный регион",
+  "name.error": "Имя и фамилия обязательны",
+  "data.error": "Данные не указаны",
+  "age.error": "Некорректный возраст"
 }

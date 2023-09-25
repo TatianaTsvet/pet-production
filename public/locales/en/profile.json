@@ -9,5 +9,10 @@
   "profile.age": "Your age",
   "profile.city": "City",
   "profile.enter.user.name": "Enter user name",
-  "profile.enter.avatar.link": "Enter avatar link"
+  "profile.enter.avatar.link": "Enter avatar link",
+  "server.error": "server error",
+  "region.error": "Incorrect region",
+  "name.error": "name or surname are incorrect",
+  "data.error": "data isn't correct",
+  "age.error": "Incorrect age"
 }

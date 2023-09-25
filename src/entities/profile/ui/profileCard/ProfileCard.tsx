@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { Mods, classNames } from 'shared/lib/classNames';
-import { IProfile } from 'entities/profile/model';
+import { EValidateProfileError, IProfile } from 'entities/profile/model';
 import { useTranslation } from 'react-i18next';
 import {
     Input, Text, TextAlign, TextTheme,
@@ -17,6 +17,7 @@ interface IProfileCardProps {
  className?: string;
  profileData?: IProfile;
  error?: string;
+ validateErrors?: EValidateProfileError[];
  isLoading?: boolean;
  readonly?: boolean;
 onChangeLastName?: (value?: string) => void;
@@ -35,6 +36,7 @@ const ProfileCard: FC<IProfileCardProps> = (props: IProfileCardProps) => {
         className,
         profileData,
         error,
+        validateErrors,
         isLoading,
         readonly,
         onChangeFirstName,
@@ -47,6 +49,14 @@ const ProfileCard: FC<IProfileCardProps> = (props: IProfileCardProps) => {
         onChangeCurrency,
     } = props;
     const { t } = useTranslation('profile');
+
+    const validateErrorsTranslation = {
+        [EValidateProfileError.INCORRECT_AGE]: t('age.error'),
+        [EValidateProfileError.INCORRECT_COUNTRY]: t('region.error'),
+        [EValidateProfileError.INCORRECT_USER_DATA]: t('name.error'),
+        [EValidateProfileError.NO_DATA]: t('data.error'),
+        [EValidateProfileError.SERVER_ERROR]: t('server.error'),
+    };
 
     if (isLoading) {
         return (
@@ -73,6 +83,9 @@ const ProfileCard: FC<IProfileCardProps> = (props: IProfileCardProps) => {
     return (
         <div className={classNames(cls.profileCard, mods, [className])}>
             <ProfilePageHeader />
+            {validateErrors?.length && validateErrors.map((err) => (
+                <Text key={err} theme={TextTheme.ERROR} text={validateErrorsTranslation[err]} />
+            ))}
             <div>
                 {profileData?.avatar && (
                     <div className={cls.avatarWrapper}>
