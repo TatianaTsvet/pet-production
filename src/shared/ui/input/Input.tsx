@@ -1,16 +1,17 @@
 import {
     InputHTMLAttributes, useEffect, useRef, useState, type FC, type PropsWithChildren, memo, ChangeEvent,
 } from 'react';
-import { classNames } from 'shared/lib';
+import { Mods, classNames } from 'shared/lib';
 import cls from './input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>
 
 interface IInputProps extends HTMLInputProps {
     className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
     autofocus?: boolean;
+    readonly?: boolean;
 }
 
 const Input: FC<IInputProps> = memo((props: PropsWithChildren<IInputProps>) => {
@@ -21,6 +22,7 @@ const Input: FC<IInputProps> = memo((props: PropsWithChildren<IInputProps>) => {
         type = 'text',
         placeholder,
         autofocus,
+        readonly,
         ...otherProps
     } = props;
     const ref = useRef<HTMLInputElement>(null);
@@ -37,8 +39,12 @@ const Input: FC<IInputProps> = memo((props: PropsWithChildren<IInputProps>) => {
         onChange?.(e.target.value);
     };
 
+    const mods: Mods = {
+        [cls.readonly]: readonly,
+    };
+
     return (
-        <div className={classNames(cls.inputWrapper, {}, [className])}>
+        <div className={classNames(cls.inputWrapper, mods, [className])}>
 
             <input
                 ref={ref}
@@ -47,6 +53,7 @@ const Input: FC<IInputProps> = memo((props: PropsWithChildren<IInputProps>) => {
                 onChange={onChangeHandler}
                 className={cls.input}
                 placeholder={placeholder}
+                readOnly={readonly}
                 {...otherProps}
             />
 

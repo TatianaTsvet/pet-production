@@ -6,5 +6,7 @@
   "lang.short": "РУ",
   "enter": "Войти",
   "log.out": "Выйти",
-  "form.auth.title": "Форма Авторизации"
+  "form.auth.title": "Форма Авторизации",
+  "choose.currency": "Укажите валюту",
+  "choose.country": "Укажите страну"
 }

@@ -1,0 +1,1 @@
+export { getProfileReadonly } from './getProfileReadonly';

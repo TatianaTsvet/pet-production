@@ -5,5 +5,7 @@
   "lang.short": "EN",
   "toggle": "toggle",
   "enter": "Enter",
-  "log.out": "Log Out"
+  "log.out": "Log Out",
+  "choose.currency": "Choose Currency",
+  "choose.country": "Choose Country"
 }
