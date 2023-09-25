@@ -1,7 +1,13 @@
 {
-    "profile.page.name": "Страница Пользователя",
-    "profile": "Профиль",
-    "edit": "Редактировать",
-    "profile.your.name": "Ваше имя",
-    "profile.your.surname": "Ваша фамилия"
+  "profile.page.name": "Страница Пользователя",
+  "profile.error": "Профиль не найден",
+  "edit": "Редактировать",
+  "profile.your.name": "Ваше имя",
+  "profile.your.surname": "Ваша фамилия",
+  "profile.cancel": "Отменить",
+  "profile.save": "Сохранить",
+  "profile.age": "Ваш возраст",
+  "profile.city": "Город",
+  "profile.enter.user.name": "Введите имя пользователя",
+  "profile.enter.avatar.link": "Введите ссылку на аватар"
 }

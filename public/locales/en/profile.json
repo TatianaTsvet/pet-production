@@ -1,7 +1,13 @@
 {
-    "profile.page.name": "Profile Page",
-    "profile": "Profile",
-    "edit": "Edit",
-    "profile.your.name": "Your name",
-    "profile.your.surname": "Your surname"
+  "profile.page.name": "Profile Page",
+  "profile.error": "Profile is not found",
+  "edit": "Edit",
+  "profile.your.name": "Your name",
+  "profile.your.surname": "Your surname",
+  "profile.cancel": "Cancel",
+  "profile.save": "Save",
+  "profile.age": "Your age",
+  "profile.city": "City",
+  "profile.enter.user.name": "Enter user name",
+  "profile.enter.avatar.link": "Enter avatar link"
 }

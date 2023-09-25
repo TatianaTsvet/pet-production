@@ -6,6 +6,13 @@
       "name": ""
     }
   },
+  "error": {
+    "login": {
+      "or": {
+        "password": ""
+      }
+    }
+  },
   "form": {
     "auth": {
       "title": ""
