@@ -2,10 +2,17 @@
   "about": {
     "site": "site"
   },
+  "age": {
+    "error": "error"
+  },
   "choose": {
     "country": "",
     "currency": ""
   },
+  "data": {
+    "error": "error"
+  },
+  "edit": "edit",
   "enter": "",
   "error": {
     "login": {
@@ -27,11 +34,39 @@
   "main": {
     "page": "page"
   },
+  "name": {
+    "error": "error"
+  },
   "page": {
     "loading": "loading",
     "not": {
       "found": "found"
     }
+  },
+  "profile": {
+    "age": "age",
+    "cancel": "cancel",
+    "city": "city",
+    "enter": {
+      "avatar": {
+        "link": "link"
+      },
+      "user": {
+        "name": "name"
+      }
+    },
+    "error": "error",
+    "save": "save",
+    "your": {
+      "name": "name",
+      "surname": "surname"
+    }
+  },
+  "region": {
+    "error": "error"
+  },
+  "server": {
+    "error": "error"
   },
   "throw": {
     "error": "error"

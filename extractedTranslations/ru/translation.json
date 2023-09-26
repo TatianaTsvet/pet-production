@@ -2,6 +2,18 @@
   "about": {
     "site": "site"
   },
+  "age": {
+    "error": "error"
+  },
+  "choose": {
+    "country": "country",
+    "currency": "currency"
+  },
+  "data": {
+    "error": "error"
+  },
+  "edit": "edit",
+  "enter": "enter",
   "error": {
     "name": "name",
     "page": {
@@ -11,14 +23,45 @@
   },
   "home": "home",
   "lang": "lang",
+  "log": {
+    "out": "out"
+  },
   "main": {
     "page": "page"
+  },
+  "name": {
+    "error": "error"
   },
   "page": {
     "loading": "loading",
     "not": {
       "found": "found"
     }
+  },
+  "profile": {
+    "age": "age",
+    "cancel": "cancel",
+    "city": "city",
+    "enter": {
+      "avatar": {
+        "link": "link"
+      },
+      "user": {
+        "name": "name"
+      }
+    },
+    "error": "error",
+    "save": "save",
+    "your": {
+      "name": "name",
+      "surname": "surname"
+    }
+  },
+  "region": {
+    "error": "error"
+  },
+  "server": {
+    "error": "error"
   },
   "throw": {
     "error": "error"

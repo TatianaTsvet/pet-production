@@ -2,12 +2,33 @@ import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 
-export default function buildLoaders(options: BuildOptions):webpack.RuleSetRule[] {
+export default function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options;
 
     const svgLoader = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
+    };
+
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
+                plugins: [
+                    [
+                        'i18next-extract',
+                        {
+                            locales: ['ru', 'en'],
+                            keyAsDefaultValue: true,
+                        },
+                    ],
+                    isDev && require.resolve('react-refresh/babel'),
+                ].filter(Boolean),
+            },
+        },
     };
 
     const cssLoader = {
@@ -29,24 +50,11 @@ export default function buildLoaders(options: BuildOptions):webpack.RuleSetRule[
         ],
     };
 
-    const babelLoader = {
-        test: /\.(js|jsx|tsx)$/,
+    // Если не используем тайпскрипт - нужен babel-loader
+    const typescriptLoader = {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-                plugins: [
-                    [
-                        'i18next-extract',
-                        {
-                            locales: ['ru', 'en'],
-                            keyAsDefaultValue: true,
-                        },
-                    ],
-                ],
-            },
-        },
     };
 
     const fileLoader = {
@@ -58,21 +66,11 @@ export default function buildLoaders(options: BuildOptions):webpack.RuleSetRule[
         ],
     };
 
-    // Если не используется typescript
-    // нужен babel-loader
-    const typescriptLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-    };
-
     return [
         fileLoader,
         svgLoader,
-        // babel is unnecessary if typescriptLoader
         // babelLoader,
         typescriptLoader,
         cssLoader,
-
     ];
 }
