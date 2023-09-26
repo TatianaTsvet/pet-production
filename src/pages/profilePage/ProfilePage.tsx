@@ -8,6 +8,7 @@ import {
     fetchProfileData,
     getProfileData,
     getProfileError,
+    getProfileForm,
     getProfileLoading,
     getProfileReadonly,
     getProfileValidateErrors,
@@ -32,7 +33,7 @@ interface IProfilePageProps {
 
 const ProfilePage: FC<IProfilePageProps> = ({ className }: PropsWithChildren<IProfilePageProps>) => {
     const dispatch = useAppDispatch();
-    const form = useSelector(getProfileData);
+    const form = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileLoading);
     const error = useSelector(getProfileError);
     const validateErrors = useSelector(getProfileValidateErrors);
@@ -42,7 +43,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }: PropsWithChildren<IPr
     useDynamicModuleLoader(reducers, true);
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') dispatch(fetchProfileData());
     }, [dispatch]);
 
     const onChangeFirstName = useCallback((value?: string) => {

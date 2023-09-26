@@ -1,0 +1,37 @@
+{
+  "age": {
+    "error": ""
+  },
+  "data": {
+    "error": ""
+  },
+  "edit": "",
+  "name": {
+    "error": ""
+  },
+  "profile": {
+    "age": "",
+    "cancel": "",
+    "city": "",
+    "enter": {
+      "avatar": {
+        "link": ""
+      },
+      "user": {
+        "name": ""
+      }
+    },
+    "error": "",
+    "save": "",
+    "your": {
+      "name": "",
+      "surname": ""
+    }
+  },
+  "region": {
+    "error": ""
+  },
+  "server": {
+    "error": ""
+  }
+}

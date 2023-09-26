@@ -2,6 +2,10 @@
   "about": {
     "site": "site"
   },
+  "choose": {
+    "country": "",
+    "currency": ""
+  },
   "enter": "",
   "error": {
     "login": {
