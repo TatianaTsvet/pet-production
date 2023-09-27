@@ -2,7 +2,7 @@ import { TestAsyncThunk } from 'shared/lib/tests';
 import { userActions } from 'entities/user';
 import { loginByUserName } from './loginByUserName';
 
-describe('loginUserName test', () => {
+describe('loginuserName test', () => {
     // // объявили типы
     // let dispatch: Dispatch;
     // let getState: () => IStateSchema;

@@ -3,10 +3,10 @@ import {
 } from '@reduxjs/toolkit';
 import { Axios, AxiosInstance } from 'axios';
 import { IUserSchema } from 'entities/user';
-import { ILoginSchema } from 'features/authByUserName';
 import { NavigateOptions } from 'react-router';
 import { Href } from 'history';
 import { IProfileSchema } from 'entities/profile';
+import { ILoginSchema } from 'features/authByuserName';
 
 export interface IStateSchema {
     user: IUserSchema;

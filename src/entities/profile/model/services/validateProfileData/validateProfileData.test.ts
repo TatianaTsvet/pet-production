@@ -4,7 +4,7 @@ import { validateProfileData } from './validateProfileData';
 import { EValidateProfileError } from '../../types';
 
 const data = {
-    username: 'admin',
+    userName: 'admin',
     age: 22,
     country: ECountry.Armenia,
     lastName: 'Tsvet',

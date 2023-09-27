@@ -121,7 +121,7 @@ const ProfileCard: FC<IProfileCardProps> = (props: IProfileCardProps) => {
                     readonly={readonly}
                 />
                 <Input
-                    value={profileData?.username}
+                    value={profileData?.userName}
                     placeholder={t('profile.enter.user.name')}
                     className={cls.input}
                     onChange={onChangeUserName}

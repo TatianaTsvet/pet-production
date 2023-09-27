@@ -16,7 +16,7 @@ export interface IProfile {
     currency?: ECurrency,
     country?: ECountry;
     city?: string,
-    username?: string;
+    userName?: string;
     avatar?: string;
 }
 

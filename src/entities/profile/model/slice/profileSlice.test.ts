@@ -5,7 +5,7 @@ import { EValidateProfileError, IProfileSchema } from '../types';
 import { profileReducer, profileActions } from './profileSlice';
 
 const data = {
-    username: 'admin',
+    userName: 'admin',
     age: 22,
     country: ECountry.Armenia,
     lastName: 'Tsvet',
@@ -24,7 +24,7 @@ describe('profileSlice.test', () => {
     });
 
     test('test cancel edit', () => {
-        const state: DeepPartial<IProfileSchema> = { data, form: { username: '' } };
+        const state: DeepPartial<IProfileSchema> = { data, form: { userName: '' } };
 
         expect(profileReducer(
             state as IProfileSchema,
@@ -38,15 +38,15 @@ describe('profileSlice.test', () => {
     });
 
     test('test update profile', () => {
-        const state: DeepPartial<IProfileSchema> = { form: { username: '123' } };
+        const state: DeepPartial<IProfileSchema> = { form: { userName: '123' } };
 
         expect(profileReducer(
             state as IProfileSchema,
             profileActions.updateProfile({
-                username: '123456',
+                userName: '123456',
             }),
         )).toEqual({
-            form: { username: '123456' },
+            form: { userName: '123456' },
         });
     });
 

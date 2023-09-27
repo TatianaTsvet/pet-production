@@ -21,7 +21,7 @@ Normal.args = {};
 // Normal.decorators = [StoreDecorator({
 //     profile: {
 //         form: {
-//             username: 'admin',
+//             userName: 'admin',
 //             age: 22,
 //             country: Country.Ukraine,
 //             lastName: 'ulbi tv',
@@ -37,7 +37,7 @@ Normal.args = {};
 // Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
 //     profile: {
 //         form: {
-//             username: 'admin',
+//             userName: 'admin',
 //             age: 22,
 //             country: ECountry.Ukraine,
 //             lastName: 'ulbi tv',

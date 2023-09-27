@@ -3,10 +3,8 @@ import {
 } from 'react';
 import { classNames, useDynamicModuleLoader } from 'shared/lib';
 import {
-    EValidateProfileError,
     ProfileCard,
     fetchProfileData,
-    getProfileData,
     getProfileError,
     getProfileForm,
     getProfileLoading,
@@ -19,9 +17,7 @@ import { ReducersList, useAppDispatch } from 'shared/lib/hooks';
 import { useSelector } from 'react-redux';
 import { ECurrency } from 'entities/currency';
 import { ECountry } from 'entities/country';
-import { Text, TextTheme } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
-import { ProfilePageHeader } from './profilePageHeader';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -63,7 +59,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }: PropsWithChildren<IPr
     }, [dispatch]);
 
     const onChangeUserName = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ username: value || '' }));
+        dispatch(profileActions.updateProfile({ userName: value || '' }));
     }, [dispatch]);
 
     const onChangeAvatar = useCallback((value?: string) => {
