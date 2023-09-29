@@ -1,0 +1,14 @@
+{
+  "article": {
+    "error": {
+      "on": {
+        "loading": ""
+      }
+    }
+  },
+  "page": {
+    "not": {
+      "found": ""
+    }
+  }
+}

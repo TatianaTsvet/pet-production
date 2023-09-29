@@ -3,3 +3,7 @@ export * from './button';
 export * from './input';
 export * from './text';
 export * from './select';
+export * from './skeleton';
+export * from './icon';
+export * from './avatar';
+export * from './code';

@@ -6,13 +6,14 @@ import { IUserSchema } from 'entities/user';
 import { NavigateOptions } from 'react-router';
 import { Href } from 'history';
 import { IProfileSchema } from 'entities/profile';
-import { ILoginSchema } from 'features/authByuserName';
+import { ILoginSchema } from 'features/authByUserName';
 
 export interface IStateSchema {
     user: IUserSchema;
     // async reducers
     loginForm?: ILoginSchema;
     profile?: IProfileSchema
+    articleDetails?: any;
 }
 
 export type StateSchemaKey = keyof IStateSchema
