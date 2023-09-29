@@ -1,5 +1,5 @@
 import {
-    useEffect, type FC, type PropsWithChildren, useCallback,
+    type FC, type PropsWithChildren, useCallback,
 } from 'react';
 import { classNames, useDynamicModuleLoader } from 'shared/lib';
 import {
@@ -13,11 +13,10 @@ import {
     profileActions,
     profileReducer,
 } from 'entities/profile';
-import { ReducersList, useAppDispatch } from 'shared/lib/hooks';
+import { ReducersList, useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
 import { useSelector } from 'react-redux';
 import { ECurrency } from 'entities/currency';
 import { ECountry } from 'entities/country';
-import { useTranslation } from 'react-i18next';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -35,12 +34,11 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }: PropsWithChildren<IPr
     const validateErrors = useSelector(getProfileValidateErrors);
     const readonly = useSelector(getProfileReadonly);
 
-    const { t } = useTranslation('profile');
     useDynamicModuleLoader(reducers, true);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') dispatch(fetchProfileData());
-    }, [dispatch]);
+    useInitialEffect(() => {
+        dispatch(fetchProfileData());
+    });
 
     const onChangeFirstName = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));

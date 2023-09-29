@@ -107,13 +107,15 @@
       "id": "1",
       "userName": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://belon.club/uploads/posts/2023-04/1681298893_belon-club-p-neitralnoe-litso-vkontakte-1.jpg"
     },
     {
       "id": "2",
       "userName": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "profile": {

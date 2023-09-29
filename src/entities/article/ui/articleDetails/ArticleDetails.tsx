@@ -4,7 +4,9 @@ import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import EyeIcon from 'shared/asserts/icons/eye.svg';
 import CalendarIcon from 'shared/asserts/icons/calendar.svg';
-import { ReducersList, useAppDispatch, useDynamicModuleLoader } from 'shared/lib';
+import {
+    ReducersList, useAppDispatch, useDynamicModuleLoader, useInitialEffect,
+} from 'shared/lib';
 import { ArticleBlock, ArticleBlockType } from 'entities/article/model';
 import {
     TextAlign, Text, TextSize, Avatar, Icon, Skeleton,
@@ -71,11 +73,9 @@ const ArticleDetails = memo((props: ArticleDetailsProps) => {
         }
     }, []);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id));
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => {
+        dispatch(fetchArticleById(id));
+    });
 
     let content;
 

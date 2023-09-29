@@ -1,0 +1,1 @@
+export { IArticleDetailsCommentsSchema } from './ArticleDetailsCommentsSchema';
