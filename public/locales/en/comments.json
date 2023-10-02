@@ -1,3 +1,5 @@
 {
-    "comments.absent": "No comments"
+    "comments.absent": "No comments",
+    "comments.enter.text": "Enter comment text",
+    "comments.send": "Send"
 }

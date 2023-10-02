@@ -2,8 +2,8 @@ import { memo, type FC } from 'react';
 import { t } from 'i18next';
 import { AppLink, AppLinkTheme } from 'shared/ui';
 import { classNames } from 'shared/lib';
+import { ISidebarItemType } from 'widgets/sidebar';
 import cls from './sidebarItem.module.scss';
-import { ISidebarItemType } from '../../model/items';
 
 interface ISidebarItemProps {
     item: ISidebarItemType;

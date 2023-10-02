@@ -1,3 +1,5 @@
 {
-    "comments.absent": "Комментарии отсутствуют"
+    "comments.absent": "Комментарии отсутствуют",
+    "comments.enter.text": "Введите текст комментария",
+    "comments.send": "Отправить"
 }

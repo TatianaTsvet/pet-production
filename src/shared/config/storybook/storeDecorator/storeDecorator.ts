@@ -7,6 +7,9 @@ import { ReducersList } from 'shared/lib/hooks';
 // const defaultAsyncReducers: ReducersList = {
 //     loginForm: loginReducer,
 //     profile: profileReducer,
+//      articleDetails: articleDetailsReducer,
+//      articleDetailsComments: articleDetailsCommentsReducer,
+//      addCommentForm: addCommentFormReducer,
 // };
 
 // export const StoreDecorator = (

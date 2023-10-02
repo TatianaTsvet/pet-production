@@ -1,0 +1,1 @@
+export { addCommentForArticle } from './addCommentForArticle';

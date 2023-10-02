@@ -17,6 +17,7 @@ import { ReducersList, useAppDispatch, useInitialEffect } from 'shared/lib/hooks
 import { useSelector } from 'react-redux';
 import { ECurrency } from 'entities/currency';
 import { ECountry } from 'entities/country';
+import { useParams } from 'react-router-dom';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -34,10 +35,12 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }: PropsWithChildren<IPr
     const validateErrors = useSelector(getProfileValidateErrors);
     const readonly = useSelector(getProfileReadonly);
 
+    const { id } = useParams<{id: string}>();
+
     useDynamicModuleLoader(reducers, true);
 
     useInitialEffect(() => {
-        dispatch(fetchProfileData());
+        if (id) dispatch(fetchProfileData(id));
     });
 
     const onChangeFirstName = useCallback((value?: string) => {

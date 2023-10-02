@@ -9,6 +9,7 @@ import { IProfileSchema } from 'entities/profile';
 import { ILoginSchema } from 'features/authByUserName';
 import { IArticleDetailsSchema } from 'entities/article';
 import { IArticleDetailsCommentsSchema } from 'pages/articleDetailsPage';
+import { IAddCommentFormSchema } from 'features';
 
 export interface IStateSchema {
     user: IUserSchema;
@@ -17,6 +18,7 @@ export interface IStateSchema {
     profile?: IProfileSchema
     articleDetails?: IArticleDetailsSchema;
     articleDetailsComments?: IArticleDetailsCommentsSchema;
+    addCommentForm?: IAddCommentFormSchema;
 }
 
 export type StateSchemaKey = keyof IStateSchema

@@ -23,7 +23,7 @@ export enum EAppRoutes {
 export const RoutePath: Record<EAppRoutes, string> = {
     [EAppRoutes.MAIN]: '/',
     [EAppRoutes.ABOUT]: '/about',
-    [EAppRoutes.PROFILE]: '/profile',
+    [EAppRoutes.PROFILE]: '/profile/',
     [EAppRoutes.ARTICLES]: '/articles',
     [EAppRoutes.ARTICLE_DETAILS]: '/articles/', // + id
     [EAppRoutes.NOT_FOUND]: '*',
@@ -39,7 +39,7 @@ export const routeConfig: Record<EAppRoutes, AppRoutesProps> = {
         element: <AboutPage />,
     },
     [EAppRoutes.PROFILE]: {
-        path: RoutePath[EAppRoutes.PROFILE],
+        path: `${RoutePath[EAppRoutes.PROFILE]}:id`,
         element: <ProfilePage />,
         authOnly: true,
     },

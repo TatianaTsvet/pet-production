@@ -18,6 +18,7 @@ export interface IProfile {
     city?: string,
     userName?: string;
     avatar?: string;
+    id?: string;
 }
 
 export interface IProfileSchema {

@@ -7,7 +7,7 @@ export type ReducersList = {
     [name: string]: Reducer | undefined;
 }
 
-export const useDynamicModuleLoader = (reducers?: ReducersList, removeAfterUnmount?: boolean): void => {
+export const useDynamicModuleLoader = (reducers?: ReducersList, removeAfterUnmount = true): void => {
     const store = useStore() as IReduxStoreWithManager;
     const dispatch = useDispatch();
 
