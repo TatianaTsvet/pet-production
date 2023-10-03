@@ -42,7 +42,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
         ) as IArticleTextBlock;
 
         return (
-            <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+            <div className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
                 <Card className={cls.card}>
                     <div className={cls.header}>
                         <Avatar size={30} src={article.user.avatar} />

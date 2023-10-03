@@ -24,6 +24,12 @@ module.exports = {
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
         'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx', '.scss'] }],
+        'react/jsx-newline': 'off',
+        'react/jsx-max-depth': 'off',
+        'react/jsx-max-props-per-line': 'off',
+        'react/jsx-one-expression-per-line': 'off',
+        'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
+        'react/jsx-curly-newline': 'off',
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'warn',
@@ -48,6 +54,11 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         'no-param-reassign': ['warn'],
         'no-undef': 'off',
+        'implicit-arrow-linebreak': 'off',
+        'object-curly-newline': ['error', {
+            multiline: true,
+            consistent: true,
+        }],
     },
     globals: {
         __IS_DEV__: true,

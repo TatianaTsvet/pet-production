@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ReducersList, useDynamicModuleLoader, useInitialEffect } from 'shared/lib/hooks';
 import { articleDetailsCommentsReducer, getArticleComments } from 'pages/articleDetailsPage/model/slices/articleDetailsCommentsSlice';
 import { addCommentForArticle, fetchCommentsByArticleId, getArticleCommentsIsLoading } from 'pages/articleDetailsPage/model';
-import { AddCommentForm } from 'features';
 import { RoutePath } from 'shared/config';
+import { AddCommentForm } from 'features/addCommentForm';
 import cls from './articleDetailsPage.module.scss';
 
 interface IArticleDetailsPageProps {

@@ -7,9 +7,9 @@ import {
     ButtonTheme,
 } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
-import { LoginModal } from 'features';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/user';
+import { LoginModal } from 'features/authByUserName';
 import cls from './navbar.module.scss';
 
 interface INavbarProps {

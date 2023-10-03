@@ -1,7 +1,6 @@
 import { Story } from '@storybook/react';
 import { IStateSchema, StoreProvider } from 'app/providers';
 import { profileReducer } from 'entities/profile';
-import { loginReducer } from 'features';
 import { ReducersList } from 'shared/lib/hooks';
 
 // const defaultAsyncReducers: ReducersList = {
