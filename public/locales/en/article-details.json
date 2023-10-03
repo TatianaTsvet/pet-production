@@ -1,5 +1,7 @@
 {
   "page.not.found": "Page is not found",
   "article.error.on.loading": "Error is in article loading.",
-  "article.comments": "Comments"
+  "article.comments": "Comments",
+  "article.read.more": "Read further",
+  "article.back.list": "Back"
 }

@@ -1,5 +1,7 @@
 {
   "page.not.found": "Статья не найдена",
   "article.error.on.loading": "Произошла ошибка при загрузке статьи.",
-  "article.comments": "Комментарии"
+  "article.comments": "Комментарии",
+  "article.read.more": "Читать далее",
+  "article.back.list": "Назад"
 }

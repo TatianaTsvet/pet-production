@@ -7,3 +7,4 @@ export * from './skeleton';
 export * from './icon';
 export * from './avatar';
 export * from './code';
+export * from './card';

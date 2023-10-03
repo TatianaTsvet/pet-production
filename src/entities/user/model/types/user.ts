@@ -1,10 +1,10 @@
-export interface User {
+export interface IUser {
     id: string;
     userName: string;
     avatar?: string;
 }
 
 export interface IUserSchema {
-    authData?: User;
+    authData?: IUser;
     mounted?: boolean;
 }
