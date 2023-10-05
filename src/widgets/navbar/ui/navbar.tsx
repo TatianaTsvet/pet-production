@@ -35,7 +35,7 @@ export const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.navbar, {}, [className])}>
+        <header className={classNames(cls.navbar, {}, [className])}>
             <div className={cls.links}>
                 {authData ? (
                     <Button
@@ -60,6 +60,6 @@ export const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
                     </>
                 )}
             </div>
-        </div>
+        </header>
     );
 });

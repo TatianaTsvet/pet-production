@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui';
+import { Button, Page } from 'shared/ui';
 import { classNames } from 'shared/lib';
 import cls from './pageError.module.scss';
 
@@ -17,12 +17,12 @@ const PageError: FC<IPageErrorProps> = ({ className }) => {
     };
 
     return (
-        <div className={classNames(cls.errorPage, {}, [className])}>
+        <Page className={classNames(cls.errorPage, {}, [className])}>
             <p>{t('error.unexpected')}</p>
             <Button onClick={reloadPage}>
                 {t('error.page.upload')}
             </Button>
-        </div>
+        </Page>
     );
 };
 

@@ -1,9 +1,16 @@
 {
   "article": {
+    "back": {
+      "list": ""
+    },
+    "comments": "",
     "error": {
       "on": {
         "loading": ""
       }
+    },
+    "read": {
+      "more": ""
     }
   },
   "page": {

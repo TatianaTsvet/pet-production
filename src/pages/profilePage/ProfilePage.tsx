@@ -18,6 +18,7 @@ import { useSelector } from 'react-redux';
 import { ECurrency } from 'entities/currency';
 import { ECountry } from 'entities/country';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -76,7 +77,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }: PropsWithChildren<IPr
     }, [dispatch]);
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <Page className={classNames('', {}, [className])}>
             <ProfileCard
                 profileData={form}
                 isLoading={isLoading}
@@ -92,7 +93,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }: PropsWithChildren<IPr
                 onChangeCurrency={onChangeCurrency}
                 onChangeCountry={onChangeCountry}
             />
-        </div>
+        </Page>
     );
 };
 

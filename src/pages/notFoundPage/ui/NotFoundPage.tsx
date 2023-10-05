@@ -1,6 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib';
+import { Page } from 'shared/ui';
 import cls from './notFoundPage.module.scss';
 
 interface INotFoundPageProps {
@@ -12,7 +13,7 @@ const NotFoundPage: FC<INotFoundPageProps> = (props: PropsWithChildren<INotFound
     const { t } = useTranslation('main');
 
     return (
-        <div className={classNames(cls.notFoundPage, {}, [className])}>{t('page.not.found')}</div>
+        <Page className={classNames(cls.notFoundPage, {}, [className])}>{t('page.not.found')}</Page>
     );
 };
 

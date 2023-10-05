@@ -4,7 +4,7 @@ import { memo, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ArticleDetails } from 'entities/article';
 import { CommentList } from 'entities/comment';
-import { Button, ButtonTheme, Text } from 'shared/ui';
+import { Button, ButtonTheme, Page, Text } from 'shared/ui';
 import { useDispatch, useSelector } from 'react-redux';
 import { ReducersList, useDynamicModuleLoader, useInitialEffect } from 'shared/lib/hooks';
 import { articleDetailsCommentsReducer, getArticleComments } from 'pages/articleDetailsPage/model/slices/articleDetailsCommentsSlice';
@@ -46,14 +46,14 @@ const ArticleDetailsPage = (props: IArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
                 {t('page.not.found')}
-            </div>
+            </Page>
         );
     }
 
     return (
-        <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+        <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
             <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('article.back.list')}</Button>
             <ArticleDetails id={id} />
             <Text text={t('article.comments')} className={cls.commentTitle} />
@@ -62,7 +62,7 @@ const ArticleDetailsPage = (props: IArticleDetailsPageProps) => {
                 isLoading={commentsIsLoading}
                 comments={comments}
             />
-        </div>
+        </Page>
     );
 };
 

@@ -39,7 +39,7 @@ const ArticleViewSelector = memo((props: IArticleViewSelectorProps) => {
                 >
                     <Icon
                         Svg={viewType.icon}
-                        className={classNames('', { [cls.notSelected]: viewType.view !== view })}
+                        className={classNames('', { [cls.notSelected]: viewType.view === view })}
                     />
                 </Button>
             ))}
