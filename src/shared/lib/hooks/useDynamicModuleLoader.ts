@@ -13,9 +13,14 @@ export const useDynamicModuleLoader = (reducers?: ReducersList, removeAfterUnmou
 
     useEffect(() => {
         if (reducers) {
+            const mountedReducers = store.reducerManager.gitMountedReducers();
             Object.entries(reducers).forEach(([name, reducer]) => {
-                store.reducerManager.add(name as StateSchemaKey, reducer as Reducer);
-                dispatch({ type: `@INIT ${name} reducer` });
+                const mounted = mountedReducers[name as StateSchemaKey];
+                if (!mounted) {
+                    // add only if reducer is absent
+                    store.reducerManager.add(name as StateSchemaKey, reducer as Reducer);
+                    dispatch({ type: `@INIT ${name} reducer` });
+                }
             });
         }
 

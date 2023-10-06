@@ -25,7 +25,6 @@ export function useInfiniteScroll({ callback, wrapperRef, triggerRef }: IUseInfi
                     callback();
                 }
             }, options);
-
             observer.current.observe(triggerElement);
         }
 

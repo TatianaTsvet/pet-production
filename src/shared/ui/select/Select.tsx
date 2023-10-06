@@ -1,5 +1,5 @@
 import {
-    ChangeEvent, memo, useMemo, type FC, type ReactNode,
+    ChangeEvent, memo, useMemo, type FC,
 } from 'react';
 import { Mods, classNames } from 'shared/lib';
 import cls from './select.module.scss';

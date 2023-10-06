@@ -25,11 +25,15 @@ export interface IStateSchema {
 
 export type StateSchemaKey = keyof IStateSchema
 
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
+
 export interface IReducerManager {
     getReducerMap: () => ReducersMapObject<IStateSchema>;
     reduce: (state: IStateSchema, action: AnyAction) => CombinedState<IStateSchema>;
     add: (key: StateSchemaKey, reducer:Reducer) => void;
     remove: (key: StateSchemaKey) => void;
+    // true - mounted, false - unmounted
+    gitMountedReducers: () => MountedReducers;
 }
 
 export interface IReduxStoreWithManager extends EnhancedStore<ILoginSchema> {
@@ -38,7 +42,6 @@ export interface IReduxStoreWithManager extends EnhancedStore<ILoginSchema> {
 
 export interface IThunkExtraArg {
     api: AxiosInstance;
-    navigate?: (to: Href, options?: NavigateOptions) => void;
 }
 
 export interface IThunkConfig<T> {

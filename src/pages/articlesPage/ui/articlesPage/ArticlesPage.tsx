@@ -9,6 +9,8 @@ import {
     articlesPageActions,
     fetchArticlesList,
     fetchNextArticlesPage,
+    getArticlesPageInited,
+    initArticlesPage,
 } from 'pages/articlesPage/model';
 import { useCallback, memo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -34,6 +36,12 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const view = useSelector(getArticlesPageView);
     const error = useSelector(getArticlesPageError);
 
+    useInitialEffect(() => {
+        dispatch(initArticlesPage);
+    });
+
+    useDynamicModuleLoader(reducers, false);
+
     const onChangeView = useCallback((view: EArticleView) => {
         dispatch(articlesPageActions.setView(view));
     }, [dispatch]);
@@ -41,15 +49,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
-
-    useInitialEffect(() => {
-        dispatch(articlesPageActions.initState());
-        dispatch(fetchArticlesList({
-            page: 1,
-        }));
-    });
-
-    useDynamicModuleLoader(reducers);
 
     return (
         <Page

@@ -34,6 +34,7 @@ const CommentList = memo((props: ICommentListProps) => {
                         isLoading={isLoading}
                         className={cls.comment}
                         comment={comment}
+                        key={comment.id}
                     />
                 ))
                 : <Text text={t('comments.absent')} />}

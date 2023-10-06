@@ -6,10 +6,6 @@ import { getArticlesPageHasMore, getArticlesPageIsLoading, getArticlesPageLimit,
 import { articlesPageActions } from '../../slices';
 import { fetchArticlesList } from '../fetchArticlesList';
 
-interface IFetchNextArticlesPageProps {
-    page?: number;
-}
-
 export const fetchNextArticlesPage = createAsyncThunk<
     void,
     void,
