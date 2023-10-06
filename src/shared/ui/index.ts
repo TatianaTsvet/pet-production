@@ -8,5 +8,4 @@ export * from './icon';
 export * from './avatar';
 export * from './code';
 export * from './card';
-export * from './page';
-export * from './pageLoader';
+export * from '../../widgets/page';

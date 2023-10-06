@@ -3,3 +3,4 @@ export { useAppDispatch } from './useAppDispatch';
 export { useInitialEffect } from './useInitialEffect';
 export { useHover, useHoverResultType } from './useHover';
 export { useInfiniteScroll } from './useInfiniteScroll';
+export { useThrottle } from './useThrottle';

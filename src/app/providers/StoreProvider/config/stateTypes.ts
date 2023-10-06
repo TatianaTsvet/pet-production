@@ -11,9 +11,12 @@ import { IArticleDetailsSchema } from 'entities/article';
 import { IArticleDetailsCommentsSchema } from 'pages/articleDetailsPage';
 import { IArticlesPageSchema } from 'pages/articlesPage';
 import { IAddCommentFormSchema } from 'features/addCommentForm';
+import { IScrollSaveSchema } from 'widgets/scrollSave';
 
 export interface IStateSchema {
     user: IUserSchema;
+    saveScroll: IScrollSaveSchema;
+
     // async reducers
     loginForm?: ILoginSchema;
     profile?: IProfileSchema
@@ -33,7 +36,7 @@ export interface IReducerManager {
     add: (key: StateSchemaKey, reducer:Reducer) => void;
     remove: (key: StateSchemaKey) => void;
     // true - mounted, false - unmounted
-    gitMountedReducers: () => MountedReducers;
+    getMountedReducers: () => MountedReducers;
 }
 
 export interface IReduxStoreWithManager extends EnhancedStore<ILoginSchema> {
