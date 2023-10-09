@@ -9,7 +9,7 @@ import {
 } from 'shared/lib';
 import { ArticleBlock, ArticleBlockType } from 'entities/article/model';
 import {
-    TextAlign, Text, TextSize, Avatar, Icon, Skeleton,
+    ETextAlign, Text, ETextSize, Avatar, Icon, Skeleton,
 } from 'shared/ui';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
@@ -92,7 +92,7 @@ const ArticleDetails = memo((props: ArticleDetailsProps) => {
     } else if (error) {
         content = (
             <Text
-                align={TextAlign.CENTER}
+                align={ETextAlign.CENTER}
                 title={t('article.error.on.loading')}
             />
         );
@@ -110,7 +110,7 @@ const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     className={cls.title}
                     title={article?.title}
                     text={article?.subtitle}
-                    size={TextSize.L}
+                    size={ETextSize.L}
                 />
                 <div className={cls.articleInfo}>
                     <Icon className={cls.icon} Svg={EyeIcon} />

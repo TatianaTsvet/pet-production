@@ -3,5 +3,17 @@
   "article.error.on.loading": "Error is in article loading.",
   "article.comments": "Comments",
   "article.read.more": "Read further",
-  "article.back.list": "Back"
+  "article.back.list": "Back",
+  "articles.sort.asc": "increase",
+  "articles.sort.desc": "decrease",
+  "articles.sort.date": "creation date",
+  "articles.sort.name": "name",
+  "articles.sort.views": "views",
+  "articles.sort.by": "Sort by",
+  "articles.sort.by.short": "by",
+  "articles.all": "All articles",
+  "articles.economics": "Economics",
+  "articles.science": "Science",
+  "articles.search": "Search",
+  "articles.not.found": "Articles are not found"
 }

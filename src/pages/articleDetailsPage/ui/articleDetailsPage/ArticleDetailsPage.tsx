@@ -4,13 +4,14 @@ import { memo, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ArticleDetails } from 'entities/article';
 import { CommentList } from 'entities/comment';
-import { Button, ButtonTheme, Page, Text } from 'shared/ui';
+import { Button, ButtonTheme, Text } from 'shared/ui';
 import { useDispatch, useSelector } from 'react-redux';
 import { ReducersList, useDynamicModuleLoader, useInitialEffect } from 'shared/lib/hooks';
 import { articleDetailsCommentsReducer, getArticleComments } from 'pages/articleDetailsPage/model/slices/articleDetailsCommentsSlice';
 import { addCommentForArticle, fetchCommentsByArticleId, getArticleCommentsIsLoading } from 'pages/articleDetailsPage/model';
 import { RoutePath } from 'shared/config';
 import { AddCommentForm } from 'features/addCommentForm';
+import { Page } from 'widgets/page';
 import cls from './articleDetailsPage.module.scss';
 
 interface IArticleDetailsPageProps {

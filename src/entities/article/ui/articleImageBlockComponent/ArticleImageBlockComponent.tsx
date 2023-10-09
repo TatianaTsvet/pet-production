@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { IArticleImageBlock } from 'entities/article/model';
-import { TextAlign, Text } from 'shared/ui';
+import { ETextAlign, Text } from 'shared/ui';
 import cls from './articleImageBlockComponent.module.scss';
 
 interface ArticleImageBlockComponentProps {
@@ -18,7 +18,7 @@ const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponentProps)
         <div className={classNames(cls.articleImageBlockComponent, {}, [className])}>
             <img src={block.src} alt={block.title} className={cls.img} />
             {block.title && (
-                <Text text={block.title} align={TextAlign.CENTER} />
+                <Text text={block.title} align={ETextAlign.CENTER} />
             )}
         </div>
     );

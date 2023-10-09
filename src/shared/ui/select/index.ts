@@ -1,1 +1,1 @@
-export { default as Select } from './Select';
+export { ISelectOption, Select } from './Select';

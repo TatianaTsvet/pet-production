@@ -4,21 +4,21 @@ import {
 import { Mods, classNames } from 'shared/lib';
 import cls from './select.module.scss';
 
-interface ISelectOption {
-    value: string;
+export interface ISelectOption<T extends string> {
+    value: T;
     content: string;
 }
 
-interface ISelectProps {
+interface ISelectProps<T extends string> {
     className?: string;
     label?: string;
-    options?: ISelectOption[];
-    value?: string;
-    onChange?: (value: string) => void;
+    options?: ISelectOption<T>[];
+    value?: T;
+    onChange?: (value: T) => void;
     readonly?: boolean;
 }
 
-const Select: FC<ISelectProps> = memo((props: ISelectProps) => {
+export const Select = memo(<T extends string>(props: ISelectProps<T>) => {
     const {
         className,
         label,
@@ -30,7 +30,7 @@ const Select: FC<ISelectProps> = memo((props: ISelectProps) => {
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
         if (onChange) {
-            onChange(e.target.value);
+            onChange(e.target.value as T);
         }
     };
 
@@ -64,5 +64,3 @@ const Select: FC<ISelectProps> = memo((props: ISelectProps) => {
         </div>
     );
 });
-
-export default Select;

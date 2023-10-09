@@ -16,8 +16,10 @@ import { useCallback, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { ReducersList, useAppDispatch, useInitialEffect, classNames, useDynamicModuleLoader } from 'shared/lib';
-import { Page } from 'shared/ui';
+import { Page } from 'widgets/page';
+import { useSearchParams } from 'react-router-dom';
 import cls from './articlesPage.module.scss';
+import { ArticlesPageFilters } from '../articlesPageFilters';
 
 interface ArticlesPageProps {
     className?: string;
@@ -35,9 +37,10 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const isLoading = useSelector(getArticlesPageIsLoading);
     const view = useSelector(getArticlesPageView);
     const error = useSelector(getArticlesPageError);
+    const [searchParams] = useSearchParams();
 
     useInitialEffect(() => {
-        dispatch(initArticlesPage);
+        dispatch(initArticlesPage(searchParams));
     });
 
     useDynamicModuleLoader(reducers, false);
@@ -55,7 +58,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
             onScrollEnd={onLoadNextPart}
             className={classNames(cls.articlesPage, {}, [className])}
         >
-            <ArticleViewSelector view={view} onViewClick={onChangeView} />
+            <ArticlesPageFilters />
             <ArticleList
                 isLoading={isLoading}
                 view={view}

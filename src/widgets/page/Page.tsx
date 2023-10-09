@@ -46,7 +46,7 @@ const Page = (props: IPageProps) => {
             onScroll={onHandleScroll}
         >
             {children}
-            <div ref={triggerRef} />
+            {onScrollEnd ? (<div className={cls.trigger} ref={triggerRef} />) : null}
         </section>
     );
 };

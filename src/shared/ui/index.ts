@@ -8,4 +8,4 @@ export * from './icon';
 export * from './avatar';
 export * from './code';
 export * from './card';
-export * from '../../widgets/page';
+export * from './tabs';

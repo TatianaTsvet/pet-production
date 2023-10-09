@@ -3,5 +3,16 @@
   "article.error.on.loading": "Произошла ошибка при загрузке статьи.",
   "article.comments": "Комментарии",
   "article.read.more": "Читать далее",
-  "article.back.list": "Назад"
+  "article.back.list": "Назад",
+  "articles.sort.asc": "возрастанию",
+  "articles.sort.desc": "убыванию",
+  "articles.sort.date": "дате создания",
+  "articles.sort.name": "названию",
+  "articles.sort.views": "просмотрам",
+  "articles.all": "Все статьи",
+  "articles.economics": "Экономика",
+  "articles.science": "Наука",
+  "articles.search": "Поиск",
+  "articles.not.found": "Статьи не найдены"
+
 }

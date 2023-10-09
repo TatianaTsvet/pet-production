@@ -7,13 +7,13 @@ export enum TextTheme {
     ERROR = 'error',
 }
 
-export enum TextAlign {
+export enum ETextAlign {
     RIGHT = 'right',
     LEFT = 'left',
     CENTER = 'center',
 }
 
-export enum TextSize {
+export enum ETextSize {
     M = 'size_m',
     L = 'size_l',
 }
@@ -23,8 +23,8 @@ interface ITextProps {
     title?: string;
     text?: string;
     theme?: TextTheme;
-    align?: TextAlign;
-    size?: TextSize;
+    align?: ETextAlign;
+    size?: ETextSize;
 }
 
 export const Text: FC<ITextProps> = memo((props: PropsWithChildren<ITextProps>) => {
@@ -33,8 +33,8 @@ export const Text: FC<ITextProps> = memo((props: PropsWithChildren<ITextProps>) 
         text,
         title,
         theme = TextTheme.PRIMARY,
-        align = TextAlign.LEFT,
-        size = TextSize.M,
+        align = ETextAlign.LEFT,
+        size = ETextSize.M,
     } = props;
 
     const mods: Mods = {

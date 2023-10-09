@@ -18,7 +18,7 @@ import { useSelector } from 'react-redux';
 import { ECurrency } from 'entities/currency';
 import { ECountry } from 'entities/country';
 import { useParams } from 'react-router-dom';
-import { Page } from 'shared/ui';
+import { Page } from 'widgets/page';
 
 const reducers: ReducersList = {
     profile: profileReducer,

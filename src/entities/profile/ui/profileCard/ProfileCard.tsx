@@ -3,7 +3,7 @@ import { Mods, classNames } from 'shared/lib/classNames';
 import { EValidateProfileError, IProfile } from 'entities/profile/model';
 import { useTranslation } from 'react-i18next';
 import {
-    Input, Text, TextAlign, TextTheme,
+    Input, Text, ETextAlign, TextTheme,
 } from 'shared/ui';
 import { Loader } from 'widgets/loader';
 import { ProfilePageHeader } from 'pages/profilePage';
@@ -70,7 +70,7 @@ const ProfileCard: FC<IProfileCardProps> = (props: IProfileCardProps) => {
     if (error) {
         return (
             <div className={classNames(cls.profileCard, {}, [className, cls.error])}>
-                <Text align={TextAlign.CENTER} theme={TextTheme.ERROR} title={t('profile.error')} />
+                <Text align={ETextAlign.CENTER} theme={TextTheme.ERROR} title={t('profile.error')} />
             </div>
 
         );
