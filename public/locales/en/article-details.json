@@ -15,5 +15,9 @@
   "articles.economics": "Economics",
   "articles.science": "Science",
   "articles.search": "Search",
-  "articles.not.found": "Articles are not found"
+  "articles.not.found": "Articles are not found",
+  "articles.edit": "Edit",
+  "articles.recommend": "We Recommend",
+  "articles.edit.by.id": "Edit article with ID = ",
+  "articles.create.new.article": "Create new article"
 }

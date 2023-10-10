@@ -4,20 +4,21 @@ import { classNames } from 'shared/lib/classNames';
 import { FC, ReactNode, memo } from 'react';
 import cls from './appLink.module.scss';
 
-export enum AppLinkTheme {
+export enum EAppLinkTheme {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
+    RED = 'red',
 }
 
 interface IAppLinkProps extends LinkProps {
     className?: string;
-    theme?: AppLinkTheme;
+    theme?: EAppLinkTheme;
     children?: ReactNode;
 }
 
 export const AppLink: FC<IAppLinkProps> = memo((props: IAppLinkProps) => {
     const {
-        className, children, to, theme = AppLinkTheme.PRIMARY, ...otherProps
+        className, children, to, theme = EAppLinkTheme.PRIMARY, ...otherProps
     } = props;
 
     return (

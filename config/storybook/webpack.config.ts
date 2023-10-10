@@ -1,7 +1,7 @@
 import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import path from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { BuildPaths } from '../build/types/config';
+import { IBuildPaths } from '../build/types/config';
 // import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
 export function buildCssLoader(isDev: boolean) {
@@ -33,7 +33,7 @@ export function buildCssLoader(isDev: boolean) {
 }
 
 export default ({ config }: {config: webpack.Configuration}) => {
-    const paths: BuildPaths = {
+    const paths: IBuildPaths = {
         build: '',
         html: '',
         entry: '',

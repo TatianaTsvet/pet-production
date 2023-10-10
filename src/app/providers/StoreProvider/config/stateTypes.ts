@@ -8,7 +8,7 @@ import { Href } from 'history';
 import { IProfileSchema } from 'entities/profile';
 import { ILoginSchema } from 'features/authByUserName';
 import { IArticleDetailsSchema } from 'entities/article';
-import { IArticleDetailsCommentsSchema } from 'pages/articleDetailsPage';
+import { IArticleDetailsCommentsSchema, IArticleDetailsPageSchema, IArticleDetailsRecommendationsSchema } from 'pages/articleDetailsPage';
 import { IArticlesPageSchema } from 'pages/articlesPage';
 import { IAddCommentFormSchema } from 'features/addCommentForm';
 import { IScrollSaveSchema } from 'widgets/scrollSave';
@@ -22,8 +22,12 @@ export interface IStateSchema {
     profile?: IProfileSchema
     articleDetails?: IArticleDetailsSchema;
     articleDetailsComments?: IArticleDetailsCommentsSchema;
+    articleDetailsRecommendations?: IArticleDetailsRecommendationsSchema;
     addCommentForm?: IAddCommentFormSchema;
     articlesPage?: IArticlesPageSchema;
+
+    // just for studying
+    articleDetailsPage?: IArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof IStateSchema

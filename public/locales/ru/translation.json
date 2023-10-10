@@ -8,5 +8,7 @@
   "log.out": "Выйти",
   "form.auth.title": "Форма Авторизации",
   "choose.currency": "Укажите валюту",
-  "choose.country": "Укажите страну"
+  "choose.country": "Укажите страну",
+  "article.create": "Создать статью"
+
 }

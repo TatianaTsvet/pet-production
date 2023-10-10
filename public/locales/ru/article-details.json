@@ -13,6 +13,9 @@
   "articles.economics": "Экономика",
   "articles.science": "Наука",
   "articles.search": "Поиск",
-  "articles.not.found": "Статьи не найдены"
-
+  "articles.not.found": "Статьи не найдены",
+  "articles.edit": "Редактировать",
+  "articles.recommend": "Рекомендуем",
+  "articles.edit.by.id": "Редактирование статьи с ID = ",
+  "articles.create.new.article": "Создание новой статьи"
 }

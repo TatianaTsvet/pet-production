@@ -1,0 +1,1 @@
+export { fetchArticleRecommendations } from './fetchArticleRecommendations';

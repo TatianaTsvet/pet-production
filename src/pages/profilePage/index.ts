@@ -1,2 +1,2 @@
-export { default as ProfilePage } from './ProfilePage';
+export { ProfileAsyncPage as ProfilePage } from './ProfileAsyncPage';
 export * from './profilePageHeader';

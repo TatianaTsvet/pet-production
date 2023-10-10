@@ -1,1 +1,1 @@
-export { default as MainPage } from './MainPage';
+export { MainAsyncPage as MainPage } from './MainAsyncPage';

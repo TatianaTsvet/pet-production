@@ -1,1 +1,1 @@
-export { default as PageError } from './PageError';
+export { PageErrorAsync as PageError } from './PageErrorAsync';

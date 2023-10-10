@@ -1,1 +1,1 @@
-export { default as ArticleDetailsPage } from './ArticleDetailsPage';
+export { ArticleDetailsAsyncPage as ArticleDetailsPage } from './articleDetailsAsyncPage';
