@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Page } from 'widgets/page';
-import cls from './ArticleEditPage.module.scss';
+import cls from './articleEditPage.module.scss';
 
 interface ArticleEditPageProps {
     className?: string;

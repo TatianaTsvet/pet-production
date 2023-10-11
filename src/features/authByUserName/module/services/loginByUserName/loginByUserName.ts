@@ -8,11 +8,6 @@ interface ILoginByUserNameProps {
     password: string;
 }
 
-enum ELoginErrors {
-    INCORRECT_DATA = '',
-    SERVER_ERROR = ''
-}
-
 export const loginByUserName = createAsyncThunk<IUser, ILoginByUserNameProps, IThunkConfig<string>>(
     'login/loginByUserName',
     async (authData: ILoginByUserNameProps, thunkApi) => {

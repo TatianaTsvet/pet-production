@@ -10,7 +10,7 @@ import { ReducersList, useDynamicModuleLoader, useInitialEffect } from 'shared/l
 import { articleDetailsCommentsReducer, getArticleComments } from 'pages/articleDetailsPage/model/slices/articleDetailsCommentsSlice';
 import {
     addCommentForArticle,
-    articleDetailsPageReducer,
+    // articleDetailsPageReducer,
     fetchArticleRecommendations, fetchCommentsByArticleId, getArticleCommentsIsLoading,
 } from 'pages/articleDetailsPage/model';
 import { AddCommentForm } from 'features/addCommentForm';
@@ -28,9 +28,9 @@ interface IArticleDetailsPageProps {
 }
 
 const reducers: ReducersList = {
-    // articleDetailsComments: articleDetailsCommentsReducer,
+    articleDetailsComments: articleDetailsCommentsReducer,
     // articleDetailsRecommendations: articleDetailsPageRecommendationsReducer,
-    articleDetailsPage: articleDetailsPageReducer,
+    // articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = (props: IArticleDetailsPageProps) => {

@@ -7,7 +7,6 @@ import {
     EAppLinkTheme,
     Button,
     ButtonTheme,
-    Text,
 } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,7 +19,7 @@ interface INavbarProps {
     className?: string;
 }
 
-export const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
+const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authData = useSelector(getUserAuthData);
@@ -75,3 +74,5 @@ export const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
         </header>
     );
 });
+
+export default Navbar;

@@ -12,9 +12,9 @@ import {
     getLoginPassword,
     getLoginError,
     loginActions,
-    loginByUserName,
     getLoginUserName,
     getLoginLoading,
+    loginByUserName,
 } from 'features/authByUserName/module';
 import cls from './loginForm.module.scss';
 
