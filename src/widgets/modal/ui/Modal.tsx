@@ -1,4 +1,4 @@
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
+import { EMods, classNames } from 'shared/lib/classNames/classNames';
 import {
     FC,
     PropsWithChildren, MouseEvent,
@@ -67,7 +67,7 @@ const Modal: FC<IModalProps> = (props: PropsWithChildren<IModalProps>) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const mods: Mods = {
+    const mods: EMods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };

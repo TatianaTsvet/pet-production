@@ -18,6 +18,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'fsd-architecture-imports',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -59,6 +60,7 @@ module.exports = {
             multiline: true,
             consistent: true,
         }],
+        'fsd-architecture-imports/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,

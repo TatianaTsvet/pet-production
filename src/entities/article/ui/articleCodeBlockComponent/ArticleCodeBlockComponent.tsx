@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { Code } from 'shared/ui';
-import { IArticleCodeBlock } from 'entities/article';
+import { IArticleCodeBlock } from '../../model';
 import cls from './articleCodeBlockComponent.module.scss';
 
 interface ArticleCodeBlockComponentProps {

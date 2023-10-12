@@ -1,9 +1,8 @@
 import type { FC } from 'react';
-import { Mods, classNames } from 'shared/lib/classNames';
-import { EValidateProfileError, IProfile } from 'entities/profile/model';
+import { EMods, classNames } from 'shared/lib/classNames';
 import { useTranslation } from 'react-i18next';
 import {
-    Input, Text, ETextAlign, TextTheme,
+    Input, Text, ETextAlign, ETextTheme,
 } from 'shared/ui';
 import { Loader } from 'widgets/loader';
 import { ProfilePageHeader } from 'pages/profilePage';
@@ -11,6 +10,7 @@ import { Avatar } from 'shared/ui/avatar';
 import { ECountry } from 'entities/country';
 import CountrySelect from 'entities/country/ui/countrySelect/CountrySelect';
 import { CurrencySelect, ECurrency } from 'entities/currency';
+import { EValidateProfileError, IProfile } from '../../model';
 import cls from './profileCard.module.scss';
 
 interface IProfileCardProps {
@@ -70,13 +70,13 @@ const ProfileCard: FC<IProfileCardProps> = (props: IProfileCardProps) => {
     if (error) {
         return (
             <div className={classNames(cls.profileCard, {}, [className, cls.error])}>
-                <Text align={ETextAlign.CENTER} theme={TextTheme.ERROR} title={t('profile.error')} />
+                <Text align={ETextAlign.CENTER} theme={ETextTheme.ERROR} title={t('profile.error')} />
             </div>
 
         );
     }
 
-    const mods: Mods = {
+    const mods: EMods = {
         [cls.editing]: readonly,
     };
 
@@ -84,7 +84,7 @@ const ProfileCard: FC<IProfileCardProps> = (props: IProfileCardProps) => {
         <div className={classNames(cls.profileCard, mods, [className])}>
             <ProfilePageHeader />
             {validateErrors?.length && validateErrors.map((err) => (
-                <Text key={err} theme={TextTheme.ERROR} text={validateErrorsTranslation[err]} />
+                <Text key={err} theme={ETextTheme.ERROR} text={validateErrorsTranslation[err]} />
             ))}
             <div>
                 {profileData?.avatar && (

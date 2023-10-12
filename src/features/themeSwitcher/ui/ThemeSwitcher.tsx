@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import LightIcon from 'shared/asserts/icons/theme-light.svg';
 import DarkIcon from 'shared/asserts/icons/theme-dark.svg';
-import { Button, ButtonTheme } from 'shared/ui';
+import { Button, EButtonTheme } from 'shared/ui';
 
 interface IThemeSwitcherProps {
     className?: string;
@@ -14,7 +14,7 @@ const ThemeSwitcher: FC<IThemeSwitcherProps> = (props) => {
     const { theme, toggleTheme } = useTheme();
     return (
         <Button
-            theme={ButtonTheme.CLEAR}
+            theme={EButtonTheme.CLEAR}
             className={classNames('', {}, [className])}
             onClick={toggleTheme}
         >

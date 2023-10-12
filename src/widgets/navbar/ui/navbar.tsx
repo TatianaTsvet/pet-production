@@ -6,7 +6,7 @@ import {
     AppLink,
     EAppLinkTheme,
     Button,
-    ButtonTheme,
+    EButtonTheme,
 } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -49,7 +49,7 @@ const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
                             {t('article.create')}
                         </AppLink>
                         <Button
-                            theme={ButtonTheme.CLEAR_INVERTED}
+                            theme={EButtonTheme.CLEAR_INVERTED}
                             className={cls.links}
                             onClick={onLogOut}
                         >
@@ -59,7 +59,7 @@ const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
                 ) : (
                     <div className={cls.main}>
                         <Button
-                            theme={ButtonTheme.CLEAR_INVERTED}
+                            theme={EButtonTheme.CLEAR_INVERTED}
                             className={cls.links}
                             onClick={onOpenModal}
                         >

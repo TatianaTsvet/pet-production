@@ -4,12 +4,18 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { SortOrder } from 'shared/types';
 import { ArticleViewSelector } from 'features/articleViewSelector';
-import { getArticlesPageOrder, getArticlesPageSearch, getArticlesPageType, getArticlesPageView, getArticlesPageSort } from 'pages/articlesPage/model';
 import { useAppDispatch, useDebounce } from 'shared/lib';
 import { Card, Input } from 'shared/ui';
 import { EArticleView, EArticleSortField, EArticleType } from 'entities/article';
 import { ArticleSortSelector } from 'features/articleSortSelector';
 import { ArticleTypeTabs } from 'features/articleTypeTabs';
+import {
+    getArticlesPageOrder,
+    getArticlesPageSearch,
+    getArticlesPageType,
+    getArticlesPageView,
+    getArticlesPageSort,
+} from '../../model';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import cls from './articlesPageFilters.module.scss';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';

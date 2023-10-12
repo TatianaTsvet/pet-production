@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui';
+import { Button, EButtonTheme } from 'shared/ui';
 import { classNames } from 'shared/lib/classNames';
 
 interface ILangSwitcherProps {
@@ -17,7 +17,7 @@ const LangSwitcher = ({ className, short }: ILangSwitcherProps) => {
     return (
         <Button
             className={classNames('', {}, [className])}
-            theme={ButtonTheme.CLEAR}
+            theme={EButtonTheme.CLEAR}
             onClick={onToggle}
         >
             {short ? t('lang.short') : t('lang')}

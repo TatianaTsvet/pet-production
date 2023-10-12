@@ -7,18 +7,21 @@ import CalendarIcon from 'shared/asserts/icons/calendar.svg';
 import {
     ReducersList, useAppDispatch, useDynamicModuleLoader, useInitialEffect,
 } from 'shared/lib';
-import { ArticleBlock, ArticleBlockType } from 'entities/article/model';
 import {
     ETextAlign, Text, ETextSize, Avatar, Icon, Skeleton,
 } from 'shared/ui';
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import cls from './articleDetails.module.scss';
 import {
+    ArticleBlock,
+    ArticleBlockType,
+    fetchArticleById,
+    articleDetailsReducer,
     getArticleDetailsData,
     getArticleDetailsError,
     getArticleDetailsIsLoading,
-} from '../../model/selectors/articleDetails';
+} from '../../model';
+
+import cls from './articleDetails.module.scss';
+
 import { ArticleCodeBlockComponent } from '../articleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../articleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../articleTextBlockComponent';

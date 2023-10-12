@@ -1,7 +1,7 @@
 import {
     InputHTMLAttributes, useEffect, useRef, useState, type FC, type PropsWithChildren, memo, ChangeEvent,
 } from 'react';
-import { Mods, classNames } from 'shared/lib';
+import { EMods, classNames } from 'shared/lib';
 import cls from './input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>
@@ -39,7 +39,7 @@ const Input: FC<IInputProps> = memo((props: PropsWithChildren<IInputProps>) => {
         onChange?.(e.target.value);
     };
 
-    const mods: Mods = {
+    const mods: EMods = {
         [cls.readonly]: readonly,
     };
 

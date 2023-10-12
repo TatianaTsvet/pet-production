@@ -1,17 +1,6 @@
 import { ArticleList, EArticleView } from 'entities/article';
 import { ArticleViewSelector } from 'features/articleViewSelector';
-import {
-    articlesPageReducer,
-    getArticles,
-    getArticlesPageIsLoading,
-    getArticlesPageView,
-    getArticlesPageError,
-    articlesPageActions,
-    fetchArticlesList,
-    fetchNextArticlesPage,
-    getArticlesPageInited,
-    initArticlesPage,
-} from 'pages/articlesPage/model';
+
 import { useCallback, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -20,6 +9,16 @@ import { Page } from 'widgets/page';
 import { useSearchParams } from 'react-router-dom';
 import cls from './articlesPage.module.scss';
 import { ArticlesPageFilters } from '../articlesPageFilters';
+import {
+    articlesPageActions,
+    articlesPageReducer,
+    fetchNextArticlesPage,
+    getArticles,
+    getArticlesPageError,
+    getArticlesPageIsLoading,
+    getArticlesPageView,
+    initArticlesPage,
+} from '../../model';
 
 interface ArticlesPageProps {
     className?: string;

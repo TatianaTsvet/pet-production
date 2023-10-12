@@ -2,7 +2,7 @@ import { useCallback, type FC, memo } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import { useTranslation } from 'react-i18next';
 import {
-    Button, Input, ButtonTheme, Text, TextTheme,
+    Button, Input, EButtonTheme, Text, ETextTheme,
 } from 'shared/ui';
 import { useSelector } from 'react-redux';
 import { useAppDispatch, useDynamicModuleLoader } from 'shared/lib';
@@ -15,7 +15,7 @@ import {
     getLoginUserName,
     getLoginLoading,
     loginByUserName,
-} from 'features/authByUserName/module';
+} from '../../module';
 import cls from './loginForm.module.scss';
 
 interface ILoginFormProps {
@@ -58,7 +58,7 @@ const LoginForm: FC<ILoginFormProps> = memo(({ className, onSuccess }: ILoginFor
         <div className={classNames(cls.loginForm, {}, [className])}>
             <Text title={t('form.auth.title')} />
             {error && (
-                <Text text={t('error.login.or.password')} theme={TextTheme.ERROR} />
+                <Text text={t('error.login.or.password')} theme={ETextTheme.ERROR} />
             )}
             <Input
                 autofocus
@@ -76,7 +76,7 @@ const LoginForm: FC<ILoginFormProps> = memo(({ className, onSuccess }: ILoginFor
                 value={password}
             />
             <Button
-                theme={ButtonTheme.OUTLINE}
+                theme={EButtonTheme.OUTLINE}
                 className={cls.loginBtn}
                 onClick={onLoginClick}
                 disabled={isLoading}

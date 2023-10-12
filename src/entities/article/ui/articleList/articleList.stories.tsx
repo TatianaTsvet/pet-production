@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { EArticleView, IArticle } from 'entities/article/model';
+import { EArticleView, IArticle } from '../../model';
 import ArticleList from './ArticleList';
 
 export default {

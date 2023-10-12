@@ -1,7 +1,7 @@
 import {
     CSSProperties, useMemo, type FC, memo,
 } from 'react';
-import { Mods, classNames } from 'shared/lib';
+import { EMods, classNames } from 'shared/lib';
 import cls from './avatar.module.scss';
 
 interface IAvatarProps {
@@ -15,7 +15,7 @@ const Avatar: FC<IAvatarProps> = memo((props: IAvatarProps) => {
     const {
         className, src, size, alt,
     } = props;
-    const mods: Mods = {};
+    const mods: EMods = {};
 
     const styles = useMemo<CSSProperties>(() => ({
         width: size || 100,

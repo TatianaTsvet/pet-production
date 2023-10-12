@@ -3,8 +3,8 @@ import { memo } from 'react';
 import {
     Skeleton, Avatar, Text, AppLink,
 } from 'shared/ui';
-import { IComment } from 'entities/comment/model';
 import { RoutePath } from 'shared/config';
+import { IComment } from '../../model';
 import cls from './commentCard.module.scss';
 
 interface ICommentCardProps {

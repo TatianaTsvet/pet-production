@@ -1,7 +1,7 @@
 import {
-    ChangeEvent, memo, useMemo, type FC,
+    ChangeEvent, memo, useMemo,
 } from 'react';
-import { Mods, classNames } from 'shared/lib';
+import { EMods, classNames } from 'shared/lib';
 import cls from './select.module.scss';
 
 export interface ISelectOption<T extends string> {
@@ -44,7 +44,7 @@ export const Select = memo(<T extends string>(props: ISelectProps<T>) => {
         </option>
     )), [options]);
 
-    const mods: Mods = {};
+    const mods: EMods = {};
 
     return (
         <div className={classNames(cls.wrapper, mods, [className])}>

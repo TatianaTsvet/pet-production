@@ -2,18 +2,18 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { HTMLAttributes, memo, ReactNode } from 'react';
 import cls from './card.module.scss';
 
-export enum CardTheme {
+export enum ECardTheme {
     NORMAL = 'normal',
     OUTLINED = 'outlined',
 }
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     children: ReactNode;
-    theme?: CardTheme;
+    theme?: ECardTheme;
 }
 
 export const Card = memo((props: ICardProps) => {
-    const { className, children, theme = CardTheme.NORMAL, ...otherProps } = props;
+    const { className, children, theme = ECardTheme.NORMAL, ...otherProps } = props;
 
     return (
         <div

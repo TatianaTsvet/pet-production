@@ -6,7 +6,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch, classNames } from 'shared/lib';
-import { Button, ButtonTheme, Text } from 'shared/ui';
+import { Button, EButtonTheme, Text } from 'shared/ui';
 import { getUserAuthData } from 'entities/user';
 import cls from './profilePageHeader.module.scss';
 
@@ -49,7 +49,7 @@ const ProfilePageHeader: FC<IProfilePageHeaderProps> = (props: IProfilePageHeade
                         ? (
                             <Button
                                 className={cls.editBtn}
-                                theme={ButtonTheme.OUTLINE}
+                                theme={EButtonTheme.OUTLINE}
                                 onClick={onEdit}
                             >
                                 {t('edit')}
@@ -59,14 +59,14 @@ const ProfilePageHeader: FC<IProfilePageHeaderProps> = (props: IProfilePageHeade
                             <>
                                 <Button
                                     className={cls.editBtn}
-                                    theme={ButtonTheme.OUTLINE_RED}
+                                    theme={EButtonTheme.OUTLINE_RED}
                                     onClick={onCancelEdit}
                                 >
                                     {t('profile.cancel')}
                                 </Button>
                                 <Button
                                     className={cls.saveBtn}
-                                    theme={ButtonTheme.OUTLINE}
+                                    theme={EButtonTheme.OUTLINE}
                                     onClick={onSave}
                                 >
                                     {t('profile.save')}

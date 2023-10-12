@@ -1,3 +1,3 @@
 export {
-    TextTheme, Text, ETextAlign, ETextSize,
+    ETextTheme, Text, ETextAlign, ETextSize,
 } from './Text';

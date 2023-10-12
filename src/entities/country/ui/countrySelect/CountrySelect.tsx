@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { ECountry } from 'entities/country/model';
 import { Select } from 'shared/ui';
+import { ECountry } from '../../model';
 
 interface CountrySelectProps {
     className?: string;

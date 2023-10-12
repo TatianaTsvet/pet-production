@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { ReducersList, useAppDispatch, useDynamicModuleLoader } from 'shared/lib';
-import { Button, ButtonTheme, Input } from 'shared/ui';
+import { Button, EButtonTheme, Input } from 'shared/ui';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
 import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import cls from './addCommentForm.module.scss';
@@ -44,7 +44,7 @@ const AddCommentForm = memo((props: IAddCommentFormProps) => {
                 onChange={onCommentTextChange}
             />
             <Button
-                theme={ButtonTheme.OUTLINE}
+                theme={EButtonTheme.OUTLINE}
                 onClick={onSendHandler}
             >
                 {t('comments.send')}

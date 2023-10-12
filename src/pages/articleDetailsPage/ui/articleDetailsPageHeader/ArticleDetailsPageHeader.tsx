@@ -3,9 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Button, ButtonTheme } from 'shared/ui';
+import { Button, EButtonTheme } from 'shared/ui';
 import { useSelector } from 'react-redux';
-import { ArticleDetailsPage } from 'pages/articleDetailsPage';
 import { getArticleDetailsData, getCanEditArticle } from 'entities/article';
 import cls from './articleDetailsPageHeader.module.scss';
 
@@ -30,14 +29,14 @@ const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => 
 
     return (
         <div className={classNames(cls.articleDetailsPageHeader, {}, [className])}>
-            <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+            <Button theme={EButtonTheme.OUTLINE} onClick={onBackToList}>
                 {t('article.back.list')}
             </Button>
             {/* can edit article only user who created the article */}
             {canEdit && (
                 <Button
                     className={cls.editBtn}
-                    theme={ButtonTheme.OUTLINE}
+                    theme={EButtonTheme.OUTLINE}
                     onClick={onEditArticle}
                 >
                     {t('articles.edit')}

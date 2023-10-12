@@ -2,7 +2,7 @@ import { memo, type FC } from 'react';
 import { t } from 'i18next';
 import { AppLink, EAppLinkTheme } from 'shared/ui';
 import { classNames } from 'shared/lib';
-import { ISidebarItemType } from 'widgets/sidebar';
+import { ISidebarItemType } from '../../model';
 import cls from './sidebarItem.module.scss';
 
 interface ISidebarItemProps {

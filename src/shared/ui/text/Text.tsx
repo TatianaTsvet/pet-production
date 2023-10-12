@@ -1,8 +1,8 @@
 import { memo, type FC, type PropsWithChildren } from 'react';
-import { Mods, classNames } from 'shared/lib';
+import { EMods, classNames } from 'shared/lib';
 import cls from './text.module.scss';
 
-export enum TextTheme {
+export enum ETextTheme {
     PRIMARY = 'primary',
     ERROR = 'error',
 }
@@ -22,7 +22,7 @@ interface ITextProps {
     className?: string;
     title?: string;
     text?: string;
-    theme?: TextTheme;
+    theme?: ETextTheme;
     align?: ETextAlign;
     size?: ETextSize;
 }
@@ -32,12 +32,12 @@ export const Text: FC<ITextProps> = memo((props: PropsWithChildren<ITextProps>) 
         className,
         text,
         title,
-        theme = TextTheme.PRIMARY,
+        theme = ETextTheme.PRIMARY,
         align = ETextAlign.LEFT,
         size = ETextSize.M,
     } = props;
 
-    const mods: Mods = {
+    const mods: EMods = {
         [cls[theme]]: true,
         [cls[align]]: true,
         [cls[align]]: true,

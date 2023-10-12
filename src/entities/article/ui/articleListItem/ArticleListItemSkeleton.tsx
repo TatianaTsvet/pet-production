@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { EArticleView } from 'entities/article/model';
 import { Card, Skeleton } from 'shared/ui';
+import { EArticleView } from '../../model';
 import cls from './articleListItem.module.scss';
 
 interface ArticleListItemSkeletonProps {

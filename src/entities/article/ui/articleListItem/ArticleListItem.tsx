@@ -2,13 +2,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import {
-    Avatar, Button, ButtonTheme, Icon, Text, Card, AppLink,
+    Avatar, Button, EButtonTheme, Icon, Text, Card, AppLink,
 } from 'shared/ui';
 import EyeIcon from 'shared/asserts/icons/eye.svg';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import {
     ArticleBlockType, EArticleView, IArticle, IArticleTextBlock,
-} from 'entities/article/model';
+} from '../../model';
 import cls from './articleListItem.module.scss';
 import { ArticleTextBlockComponent } from '../articleTextBlockComponent';
 
@@ -52,7 +52,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
                     )}
                     <div className={cls.footer}>
                         <AppLink target={target} to={RoutePath.article + article.id}>
-                            <Button theme={ButtonTheme.OUTLINE}>
+                            <Button theme={EButtonTheme.OUTLINE}>
                                 {t('article.read.more')}
                                 ...
                             </Button>
