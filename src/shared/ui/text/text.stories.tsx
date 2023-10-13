@@ -1,8 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ETextTheme, Text } from './Text';
-// import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-// import { Theme } from 'app/providers/ThemeProvider';
+
+import { Text, ETextSize, ETextTheme } from './Text';
 
 export default {
     title: 'shared/Text',
@@ -44,14 +43,35 @@ PrimaryDark.args = {
 };
 // PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const onlyTitleDark = Template.bind({});
-onlyTitleDark.args = {
-    title: 'Title lorem ipsun',
-};
+// export const onlyTitleDark = Template.bind({});
+// onlyTitleDark.args = {
+//     title: 'Title lorem ipsun',
+// };
 // onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const onlyTextDark = Template.bind({});
-onlyTextDark.args = {
-    text: 'Description Description Description Description',
-};
+// export const onlyTextDark = Template.bind({});
+// onlyTextDark.args = {
+//     text: 'Description Description Description Description',
+// };
 // onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SizeL = Template.bind({});
+SizeL.args = {
+    title: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
+    size: ETextSize.L,
+};
+
+export const SizeM = Template.bind({});
+SizeL.args = {
+    title: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
+    size: ETextSize.M,
+};
+
+export const SizeS = Template.bind({});
+SizeL.args = {
+    title: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
+    size: ETextSize.S,
+};
