@@ -19,6 +19,7 @@ import { ECurrency } from 'entities/currency';
 import { ECountry } from 'entities/country';
 import { useParams } from 'react-router-dom';
 import { Page } from 'widgets/page';
+import { VStack } from 'shared/ui/stack';
 
 const reducers: ReducersList = {
     profile: profileReducer,

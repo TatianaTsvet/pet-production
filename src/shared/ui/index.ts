@@ -9,3 +9,4 @@ export * from './avatar';
 export * from './code';
 export * from './card';
 export * from './tabs';
+export * from './stack';

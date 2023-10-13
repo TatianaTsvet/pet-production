@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch, classNames } from 'shared/lib';
 import { Button, EButtonTheme, Text } from 'shared/ui';
 import { getUserAuthData } from 'entities/user';
-import cls from './profilePageHeader.module.scss';
+import { HStack } from 'shared/ui/stack';
 
 interface IProfilePageHeaderProps {
  className?: string;
@@ -41,14 +41,13 @@ const ProfilePageHeader: FC<IProfilePageHeaderProps> = (props: IProfilePageHeade
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.profilePageHeader, {}, [className])}>
+        <HStack max justify="between" className={classNames('', {}, [className])}>
             <Text title={t('profile')} />
-            {canEdit && (
-                <div className={cls.btnWrapper}>
+            {canEdit ? (
+                <div>
                     {readonly
                         ? (
                             <Button
-                                className={cls.editBtn}
                                 theme={EButtonTheme.OUTLINE}
                                 onClick={onEdit}
                             >
@@ -56,26 +55,24 @@ const ProfilePageHeader: FC<IProfilePageHeaderProps> = (props: IProfilePageHeade
                             </Button>
                         )
                         : (
-                            <>
+                            <HStack gap="8">
                                 <Button
-                                    className={cls.editBtn}
                                     theme={EButtonTheme.OUTLINE_RED}
                                     onClick={onCancelEdit}
                                 >
                                     {t('profile.cancel')}
                                 </Button>
                                 <Button
-                                    className={cls.saveBtn}
                                     theme={EButtonTheme.OUTLINE}
                                     onClick={onSave}
                                 >
                                     {t('profile.save')}
                                 </Button>
-                            </>
+                            </HStack>
                         )}
                 </div>
-            )}
-        </div>
+            ) : null}
+        </HStack>
     );
 };
 
