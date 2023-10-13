@@ -7,6 +7,8 @@ import {
     EAppLinkTheme,
     Button,
     EButtonTheme,
+    Dropdown,
+    Avatar,
 } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -48,13 +50,33 @@ const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
                         >
                             {t('article.create')}
                         </AppLink>
-                        <Button
+                        <Dropdown
+                            className={cls.dropdown}
+                            items={[
+                                {
+                                    content: t('log.out'),
+                                    onClick: onLogOut,
+                                },
+                                {
+                                    content: t('page.profile'),
+                                    href: RoutePath.profile + authData.id,
+                                },
+                            ]}
+                            trigger={(
+                                <Avatar
+                                    size={30}
+                                    src={authData.avatar}
+                                />
+                            )}
+                            direction="bottom left"
+                        />
+                        {/* <Button
                             theme={EButtonTheme.CLEAR_INVERTED}
                             className={cls.links}
                             onClick={onLogOut}
                         >
                             {t('log.out')}
-                        </Button>
+                        </Button> */}
                     </div>
                 ) : (
                     <div className={cls.main}>

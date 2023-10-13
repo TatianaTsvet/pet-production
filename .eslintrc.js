@@ -46,7 +46,7 @@ module.exports = {
         'linebreak-style': 'off',
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
-            ignoreAttribute: ['data-testid', 'to', 'target', 'direction', 'justify', 'align', 'gap', 'role'],
+            ignoreAttribute: ['data-testid', 'to', 'target', 'direction', 'justify', 'align', 'gap', 'role', 'as'],
             // ignoreAllAttributes: true,
         }],
         'jsx-a11y/no-static-element-interactions': 'off',
