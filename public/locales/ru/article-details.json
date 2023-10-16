@@ -17,5 +17,6 @@
   "articles.edit": "Редактировать",
   "articles.recommend": "Рекомендуем",
   "articles.edit.by.id": "Редактирование статьи с ID = ",
-  "articles.create.new.article": "Создание новой статьи"
+  "articles.create.new.article": "Создание новой статьи",
+  "articles.upload.error": "Ошибка при загрузке статей"
 }

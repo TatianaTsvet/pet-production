@@ -1,1 +1,0 @@
-export { getProfileError } from './getProfileError';

@@ -10,20 +10,18 @@ import {
     HStack,
 } from 'shared/ui';
 import { Loader } from 'widgets/loader';
-import { ProfilePageHeader } from 'pages/profilePage';
 import { Avatar } from 'shared/ui/avatar';
 import { ECountry } from 'entities/country';
 import CountrySelect from 'entities/country/ui/countrySelect/CountrySelect';
 import { CurrencySelect, ECurrency } from 'entities/currency';
 
-import { EValidateProfileError, IProfile } from '../../model';
+import { IProfile } from '../../model';
 import cls from './profileCard.module.scss';
 
 interface IProfileCardProps {
  className?: string;
  profileData?: IProfile;
  error?: string;
- validateErrors?: EValidateProfileError[];
  isLoading?: boolean;
  readonly?: boolean;
 onChangeLastName?: (value?: string) => void;
@@ -42,7 +40,6 @@ const ProfileCard: FC<IProfileCardProps> = (props: IProfileCardProps) => {
         className,
         profileData,
         error,
-        validateErrors,
         isLoading,
         readonly,
         onChangeFirstName,
@@ -56,28 +53,20 @@ const ProfileCard: FC<IProfileCardProps> = (props: IProfileCardProps) => {
     } = props;
     const { t } = useTranslation('profile');
 
-    const validateErrorsTranslation = {
-        [EValidateProfileError.INCORRECT_AGE]: t('age.error'),
-        [EValidateProfileError.INCORRECT_COUNTRY]: t('region.error'),
-        [EValidateProfileError.INCORRECT_USER_DATA]: t('name.error'),
-        [EValidateProfileError.NO_DATA]: t('data.error'),
-        [EValidateProfileError.SERVER_ERROR]: t('server.error'),
-    };
-
     if (isLoading) {
         return (
-            <div className={classNames(cls.profileCard, {}, [className, cls.loading])}>
+            <HStack justify="center" max className={classNames(cls.profileCard, {}, [className, cls.loading])}>
                 <Loader />
-            </div>
+            </HStack>
 
         );
     }
 
     if (error) {
         return (
-            <div className={classNames(cls.profileCard, {}, [className, cls.error])}>
+            <HStack justify="center" max className={classNames(cls.profileCard, {}, [className, cls.error])}>
                 <Text align={ETextAlign.CENTER} theme={ETextTheme.ERROR} title={t('profile.error')} />
-            </div>
+            </HStack>
 
         );
     }
@@ -88,10 +77,7 @@ const ProfileCard: FC<IProfileCardProps> = (props: IProfileCardProps) => {
 
     return (
         <VStack gap="16" max className={classNames(cls.profileCard, mods, [className])}>
-            <ProfilePageHeader />
-            {validateErrors?.length && validateErrors.map((err) => (
-                <Text key={err} theme={ETextTheme.ERROR} text={validateErrorsTranslation[err]} />
-            ))}
+
             {profileData?.avatar && (
                 <HStack max justify="center">
                     <Avatar src={profileData?.avatar} />

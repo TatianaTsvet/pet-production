@@ -1,1 +1,0 @@
-export { getProfileData } from './getProfileData';

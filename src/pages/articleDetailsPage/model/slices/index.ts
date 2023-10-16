@@ -3,8 +3,9 @@
 // import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice';
 // import { articleDetailsPageRecommendationsReducer } from './articleDetailsPageRecommendationSlice';
 
-export { getArticleComments } from './articleDetailsCommentsSlice';
+export { getArticleComments, articleDetailsCommentsReducer } from './articleDetailsCommentsSlice';
 export { getArticleRecommendations } from './articleDetailsPageRecommendationSlice';
+export { articleDetailsPageRecommendationsReducer } from './articleDetailsPageRecommendationSlice';
 
 // bad example, just for studying
 // export const articleDetailsPageReducer = combineReducers<IArticleDetailsPageSchema>({

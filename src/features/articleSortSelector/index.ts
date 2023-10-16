@@ -1,1 +1,1 @@
-export { default as ArticleSortSelector } from './ArticleSortSelector';
+export { ArticleSortSelector } from './ArticleSortSelector';

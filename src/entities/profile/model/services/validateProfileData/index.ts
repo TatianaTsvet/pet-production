@@ -1,1 +1,0 @@
-export { validateProfileData } from './validateProfileData';

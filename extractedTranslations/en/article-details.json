@@ -13,6 +13,12 @@
       "more": ""
     }
   },
+  "articles": {
+    "not": {
+      "found": ""
+    },
+    "search": ""
+  },
   "page": {
     "not": {
       "found": ""

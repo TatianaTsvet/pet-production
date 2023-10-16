@@ -6,7 +6,14 @@ import { USER_LOCALSTORAGE_KEY } from 'shared/types';
 
 export const API = axios.create({
     baseURL: __API__,
-    headers: {
-        authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
-    },
+    // headers: {
+    //     authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
+    // },
+});
+
+API.interceptors.request.use((config) => {
+    if (config.headers) {
+        config.headers.authorization = localStorage.getItem(USER_LOCALSTORAGE_KEY) || '';
+    }
+    return config;
 });

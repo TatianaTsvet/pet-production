@@ -19,6 +19,7 @@ import {
     getArticlesPageView,
     initArticlesPage,
 } from '../../model';
+import ArticleInfiniteList from '../articleInfiniteList/ArticleInfiniteList';
 
 interface ArticlesPageProps {
     className?: string;
@@ -44,10 +45,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
     useDynamicModuleLoader(reducers, false);
 
-    const onChangeView = useCallback((view: EArticleView) => {
-        dispatch(articlesPageActions.setView(view));
-    }, [dispatch]);
-
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
@@ -58,11 +55,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
             className={classNames(cls.articlesPage, {}, [className])}
         >
             <ArticlesPageFilters />
-            <ArticleList
-                isLoading={isLoading}
-                view={view}
-                articles={articles}
-            />
+            <ArticleInfiniteList />
         </Page>
     );
 };

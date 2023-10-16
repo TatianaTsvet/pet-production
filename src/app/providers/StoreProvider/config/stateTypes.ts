@@ -5,17 +5,19 @@ import { AxiosInstance } from 'axios';
 import { IUserSchema } from 'entities/user';
 import { NavigateOptions } from 'react-router';
 import { Href } from 'history';
-import { IProfileSchema } from 'entities/profile';
 import { ILoginSchema } from 'features/authByUserName';
 import { IArticleDetailsSchema } from 'entities/article';
 import { IArticleDetailsCommentsSchema, IArticleDetailsRecommendationsSchema } from 'pages/articleDetailsPage';
 import { IArticlesPageSchema } from 'pages/articlesPage';
 import { IAddCommentFormSchema } from 'features/addCommentForm';
 import { IScrollSaveSchema } from 'widgets/scrollSave';
+import { rtkApi } from 'shared/api/rtkApi';
+import { IProfileSchema } from 'features/editableProfileCard';
 
 export interface IStateSchema {
     user: IUserSchema;
     saveScroll: IScrollSaveSchema;
+ [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
     // async reducers
     loginForm?: ILoginSchema;
