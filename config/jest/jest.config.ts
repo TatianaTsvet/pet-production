@@ -42,6 +42,16 @@ export default {
         __API__: '',
         __PROJECT__: 'jest',
     },
+    // Use this configuration option to add custom reporters to Jest
+    reporters: [
+        'default',
+        ['jest-html-reporters', {
+            publicPath: '<rootDir>/reports/unit',
+            fileName: 'test-report.html',
+            openReport: true,
+            inlineSource: true,
+        }],
+    ],
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
@@ -106,9 +116,6 @@ export default {
 
     // Run tests from one or more projects
     // projects: undefined,
-
-    // Use this configuration option to add custom reporters to Jest
-    // reporters: undefined,
 
     // Automatically reset mock state before every test
     // resetMocks: false,

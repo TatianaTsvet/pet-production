@@ -12,7 +12,7 @@ node_modules
 
 
 # testing
-/coverage
+/reports
 
 # production
 /build

@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Key, memo, useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { ProfileCard } from 'entities/profile';
 import { useSelector } from 'react-redux';
-import { useAppDispatch, useInitialEffect, DynamicModuleLoader, ReducersList, useDynamicModuleLoader } from 'shared/lib';
+import { useAppDispatch, useInitialEffect, ReducersList, useDynamicModuleLoader } from 'shared/lib';
 import { ETextTheme, VStack, Text } from 'shared/ui';
 import { ECountry } from 'entities/country';
 import { ECurrency } from 'entities/currency';
