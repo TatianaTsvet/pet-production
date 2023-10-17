@@ -1,19 +1,31 @@
-import React, { FC, PropsWithChildren, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Provider } from 'react-redux';
-import { ReducersMapObject, Store } from '@reduxjs/toolkit';
-import { createReduxStore } from '../config/store';
+import { createReduxStore } from 'app/providers/StoreProvider/config/store';
+import { ReducersMapObject } from '@reduxjs/toolkit';
 import { IStateSchema } from '../config';
 
-interface IStoreProviderProps {
- initialState?: IStateSchema;
- asyncReducers?: ReducersMapObject<IStateSchema>;
+interface StoreProviderProps {
+    children?: ReactNode;
+    initialState?: DeepPartial<IStateSchema>;
+    asyncReducers?: DeepPartial<ReducersMapObject<IStateSchema>>
 }
 
-const StoreProvider: FC<IStoreProviderProps> = ({ children, initialState, asyncReducers }: PropsWithChildren<IStoreProviderProps>) => {
+export const StoreProvider = (props: StoreProviderProps) => {
+    const {
+        children,
+        initialState,
+        asyncReducers,
+    } = props;
+
+    // const navigate = useNavigate();
+
     const store = createReduxStore(
         initialState as IStateSchema,
         asyncReducers as ReducersMapObject<IStateSchema>,
+        // navigate,
     );
+
+    console.log('RENDER');
 
     return (
         <Provider store={store}>
@@ -21,5 +33,3 @@ const StoreProvider: FC<IStoreProviderProps> = ({ children, initialState, asyncR
         </Provider>
     );
 };
-
-export default StoreProvider;

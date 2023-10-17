@@ -14,9 +14,12 @@
     }
   },
   "articles": {
+    "all": "",
+    "economics": "",
     "not": {
       "found": ""
     },
+    "science": "",
     "search": ""
   },
   "page": {

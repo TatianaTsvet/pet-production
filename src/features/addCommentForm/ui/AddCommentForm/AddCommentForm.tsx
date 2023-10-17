@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { ReducersList, useAppDispatch, useDynamicModuleLoader } from 'shared/lib';
-import { Button, EButtonTheme, Input } from 'shared/ui';
+import { Button, EButtonTheme, HStack, Input } from 'shared/ui';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
 import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import cls from './addCommentForm.module.scss';
@@ -36,7 +36,7 @@ const AddCommentForm = memo((props: IAddCommentFormProps) => {
     }, [onCommentTextChange, onSendComment, text]);
 
     return (
-        <div className={classNames(cls.addCommentForm, {}, [className])}>
+        <HStack justify="between" gap="20" max className={classNames(cls.addCommentForm, {}, [className])}>
             <Input
                 className={cls.input}
                 placeholder={t('comments.enter.text')}
@@ -49,7 +49,7 @@ const AddCommentForm = memo((props: IAddCommentFormProps) => {
             >
                 {t('comments.send')}
             </Button>
-        </div>
+        </HStack>
     );
 });
 

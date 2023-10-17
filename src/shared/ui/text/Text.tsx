@@ -34,6 +34,7 @@ interface ITextProps {
     theme?: ETextTheme;
     align?: ETextAlign;
     size?: ETextSize;
+    'data-testid'?: string;
 }
 
 export const Text: FC<ITextProps> = memo((props: PropsWithChildren<ITextProps>) => {
@@ -44,6 +45,7 @@ export const Text: FC<ITextProps> = memo((props: PropsWithChildren<ITextProps>) 
         theme = ETextTheme.PRIMARY,
         align = ETextAlign.LEFT,
         size = ETextSize.M,
+        'data-testid': dataTestId = 'text',
     } = props;
 
     const HeaderTag = mapSizeToHeaderTag[size];
@@ -56,8 +58,8 @@ export const Text: FC<ITextProps> = memo((props: PropsWithChildren<ITextProps>) 
 
     return (
         <div className={classNames(cls.Text, mods, [className])}>
-            {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
-            {text && <p className={cls.text}>{text}</p>}
+            {title && <HeaderTag data-testid={`${dataTestId}.Header`} className={cls.title}>{title}</HeaderTag>}
+            {text && <p data-testid={`${dataTestId}.Paragraph`} className={cls.text}>{text}</p>}
         </div>
     );
 });
