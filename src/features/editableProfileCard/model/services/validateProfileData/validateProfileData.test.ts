@@ -4,7 +4,7 @@ import { EValidateProfileError } from '../../types/editableProfileCardSchema';
 import { validateProfileData } from './validateProfileData';
 
 const data = {
-    username: 'admin',
+    userName: 'admin',
     age: 22,
     country: ECountry.Armenia,
     lastName: 'Tsvet',

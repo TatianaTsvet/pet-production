@@ -19,6 +19,7 @@ const AppRouter: FC = () => {
             />
         );
     }, []);
+
     return (
         <Routes>
             {Object.values(routeConfig).map(renderWithWrapper)}

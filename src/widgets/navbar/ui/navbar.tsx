@@ -12,7 +12,7 @@ import {
 } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/user';
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/user';
 import { LoginModal } from 'features/authByUserName';
 import { RoutePath } from 'shared/config';
 import cls from './navbar.module.scss';
@@ -27,6 +27,9 @@ const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
 
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
+
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
     }, []);
@@ -38,6 +41,8 @@ const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
     const onLogOut = useCallback(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
+
+    const isAdminPanelAvailable = isAdmin || isManager;
 
     return (
         <header className={classNames(cls.navbar, {}, [className])}>
@@ -53,6 +58,10 @@ const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
                         <Dropdown
                             className={cls.dropdown}
                             items={[
+                                ...(isAdminPanelAvailable ? [{
+                                    content: t('admin.panel'),
+                                    href: RoutePath.admin_panel,
+                                }] : []),
                                 {
                                     content: t('log.out'),
                                     onClick: onLogOut,

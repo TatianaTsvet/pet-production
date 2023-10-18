@@ -69,7 +69,7 @@ const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
     }, [dispatch]);
 
-    const onChangeUsername = useCallback((value?: string) => {
+    const onChangeUserName = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ userName: value || '' }));
     }, [dispatch]);
 
@@ -105,7 +105,7 @@ const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 onChangeLastName={onChangeLastName}
                 onChangeAge={onChangeAge}
                 onChangeCity={onChangeCity}
-                onChangeUserName={onChangeUsername}
+                onChangeUserName={onChangeUserName}
                 onChangeAvatar={onChangeAvatar}
                 onChangeCurrency={onChangeCurrency}
                 onChangeCountry={onChangeCountry}

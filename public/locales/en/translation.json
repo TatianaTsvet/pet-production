@@ -9,5 +9,8 @@
   "choose.currency": "Choose Currency",
   "choose.country": "Choose Country",
   "article.create": "Create Article",
-  "page.profile": "Profile"
+  "page.profile": "Profile",
+  "admin.panel": "Admin panel",
+  "about.site": "About us",
+  "page.forbidden": "You don't have rights to see this page"
 }

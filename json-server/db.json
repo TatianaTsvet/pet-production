@@ -728,15 +728,22 @@
       "id": "1",
       "userName": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "role": ["ADMIN"],
       "avatar": "https://belon.club/uploads/posts/2023-04/1681298893_belon-club-p-neitralnoe-litso-vkontakte-1.jpg"
     },
     {
       "id": "2",
       "userName": "user",
       "password": "123",
-      "role": "USER",
+      "role": ["USER"],
       "avatar": "https://kartinkin.net/pics/uploads/posts/2022-07/1658514370_58-kartinkin-net-p-anime-tyan-krasivie-arti-oboi-65.jpg"
+    },
+    {
+      "id": "3",
+      "userName": "manager",
+      "password": "123",
+      "role": ["MANAGER"],
+      "avatar": "https://klike.net/uploads/posts/2023-03/1678681102_3-47.jpg"
     }
   ],
   "profile": [

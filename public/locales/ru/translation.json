@@ -10,5 +10,8 @@
   "choose.currency": "Укажите валюту",
   "choose.country": "Укажите страну",
   "article.create": "Создать статью",
-  "page.profile": "Профиль"
+  "page.profile": "Профиль",
+  "about.site": "О сайте",
+  "admin.panel": "Админ панель",
+  "page.forbidden": "У вас нет доступа к этой странице"
 }
