@@ -1,52 +1,29 @@
 import { IUser } from 'entities/user';
-
-export enum ArticleBlockType {
-    CODE = 'CODE',
-    IMAGE = 'IMAGE',
-    TEXT = 'TEXT',
-}
-
-export enum EArticleSortField {
-    VIEWS = 'views',
-    TITLE = 'title',
-    CREATED = 'created',
-}
+import { EArticleBlockType, EArticleType } from '../consts';
 
 export interface IArticleBlockBase {
     id: string;
-    type: ArticleBlockType;
+    type: EArticleBlockType;
 }
 
 export interface IArticleCodeBlock extends IArticleBlockBase {
-    type: ArticleBlockType.CODE;
+    type: EArticleBlockType.CODE;
     code: string;
 }
 
 export interface IArticleImageBlock extends IArticleBlockBase {
-    type: ArticleBlockType.IMAGE;
+    type: EArticleBlockType.IMAGE;
     src: string;
     title: string;
 }
 
 export interface IArticleTextBlock extends IArticleBlockBase {
-    type: ArticleBlockType.TEXT;
+    type: EArticleBlockType.TEXT;
     paragraphs: string[];
     title?: string;
 }
 
 export type ArticleBlock = IArticleCodeBlock | IArticleImageBlock | IArticleTextBlock;
-
-export enum EArticleType {
-    IT = 'IT',
-    SCIENCE = 'SCIENCE',
-    ECONOMICS = 'ECONOMICS',
-    ALL = 'ALL'
-}
-
-export enum EArticleView {
-    BIG = 'BIG',
-    SMALL = 'SMALL',
-}
 
 export interface IArticle {
     id: string;

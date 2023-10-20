@@ -1,8 +1,8 @@
 import { ECountry } from 'entities/country';
 import { ECurrency } from 'entities/currency';
 import { TestAsyncThunk } from 'shared/lib/tests';
-import { EValidateProfileError } from '../../types/editableProfileCardSchema';
 import { updateProfileData } from './updateProfileData';
+import { EValidateProfileError } from '../../consts';
 
 const data = {
     userName: 'admin',

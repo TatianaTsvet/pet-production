@@ -1,37 +1,37 @@
 {
   "article": {
     "back": {
-      "list": ""
+      "list": "list"
     },
-    "comments": "",
+    "comments": "comments",
     "error": {
       "on": {
-        "loading": ""
+        "loading": "loading"
       }
     },
     "read": {
-      "more": ""
+      "more": "more"
     }
   },
   "articles": {
-    "all": "",
+    "all": "all",
     "create": {
       "new": {
-        "article": ""
+        "article": "article"
       }
     },
-    "economics": "",
+    "economics": "economics",
     "edit": {
       "by": {
-        "id": ""
+        "id": "id"
       }
     },
     "not": {
-      "found": ""
+      "found": "found"
     },
-    "recommend": "",
-    "science": "",
-    "search": "",
+    "recommend": "recommend",
+    "science": "science",
+    "search": "search",
     "sort": {
       "asc": "asc",
       "by": "by",
@@ -41,12 +41,12 @@
       "views": "views"
     },
     "upload": {
-      "error": ""
+      "error": "error"
     }
   },
   "page": {
     "not": {
-      "found": ""
+      "found": "found"
     }
   }
 }

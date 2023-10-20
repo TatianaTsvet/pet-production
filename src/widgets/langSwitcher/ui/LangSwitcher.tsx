@@ -11,7 +11,7 @@ const LangSwitcher = ({ className, short }: ILangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const onToggle = async () => {
-        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+        await i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
     };
 
     return (
@@ -20,7 +20,7 @@ const LangSwitcher = ({ className, short }: ILangSwitcherProps) => {
             theme={EButtonTheme.CLEAR}
             onClick={onToggle}
         >
-            {short ? t('lang.short') : t('lang')}
+            {short ? t('lang') : t('language')}
         </Button>
 
     );

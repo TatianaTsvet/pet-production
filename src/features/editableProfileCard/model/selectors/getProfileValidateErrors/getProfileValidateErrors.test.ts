@@ -1,6 +1,6 @@
 import { IStateSchema } from 'app/providers';
 import { getProfileValidateErrors } from './getProfileValidateErrors';
-import { EValidateProfileError } from '../../types';
+import { EValidateProfileError } from '../../consts';
 
 describe('getProfileValidateErrors.test', () => {
     test('should work with filled state', () => {

@@ -56,7 +56,7 @@ export const ArticleSortSelector = memo((props: IArticleSortSelectorProps) => {
             />
             <Select
                 options={orderOptions}
-                label={t('articles.sort.by.short')}
+                // label={t('articles.sort.by.brief')}
                 value={order}
                 onChange={(select) => onChangeOrder(select as SortOrder)}
                 className={cls.order}

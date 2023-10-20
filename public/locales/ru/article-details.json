@@ -19,5 +19,6 @@
   "articles.edit.by.id": "Редактирование статьи с ID = ",
   "articles.create.new.article": "Создание новой статьи",
   "articles.upload.error": "Ошибка при загрузке статей",
-  "page.loading": "Страница загружается"
+  "page.loading": "Страница загружается",
+  "articles.sort.by.brief": "по"
 }

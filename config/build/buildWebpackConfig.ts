@@ -1,9 +1,9 @@
 import webpack from 'webpack';
 import buildPlugins from './buildPlugins';
-import buildLoaders from './buildLoaders';
 import { BuildOptions } from './types/config';
 import buildResolvers from './buildResolvers';
 import { buildDevServer } from './buildDevServer';
+import { buildLoaders } from './buildLoaders';
 
 export default function buildWebpackConfig(options: BuildOptions):webpack.Configuration {
     const { paths, mode, isDev } = options;

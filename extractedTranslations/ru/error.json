@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "name",
+    "page": {
+      "upload": "upload"
+    },
+    "unexpected": "unexpected"
+  }
+}

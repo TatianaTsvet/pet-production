@@ -5,9 +5,9 @@ import {
     Avatar, Button, EButtonTheme, Icon, Text, Card, AppLink,
 } from 'shared/ui';
 import EyeIcon from 'shared/asserts/icons/eye.svg';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig.types';
 import {
-    ArticleBlockType, EArticleView, IArticle, IArticleTextBlock,
+    EArticleBlockType, EArticleView, IArticle, IArticleTextBlock,
 } from '../../model';
 import cls from './articleListItem.module.scss';
 import { ArticleTextBlockComponent } from '../articleTextBlockComponent';
@@ -33,7 +33,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
 
     if (view === EArticleView.BIG) {
         const textBlock = article.blocks.find(
-            (block) => block.type === ArticleBlockType.TEXT,
+            (block) => block.type === EArticleBlockType.TEXT,
         ) as IArticleTextBlock;
 
         return (

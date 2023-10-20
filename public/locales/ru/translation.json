@@ -1,9 +1,9 @@
 {   
   "test.example": "Тестовый пример",
   "translation": "Перевод",
-  "lang": "Русский",
+  "language": "Русский",
   "toggle": "переключить",
-  "lang.short": "РУ",
+  "lang": "РУ",
   "enter": "Войти",
   "log.out": "Выйти",
   "form.auth.title": "Форма Авторизации",

@@ -1,0 +1,21 @@
+{
+  "enter": {
+    "button": "button",
+    "password": "password",
+    "user": {
+      "name": "name"
+    }
+  },
+  "error": {
+    "login": {
+      "or": {
+        "password": "password"
+      }
+    }
+  },
+  "form": {
+    "auth": {
+      "title": "title"
+    }
+  }
+}

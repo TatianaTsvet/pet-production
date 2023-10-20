@@ -2,7 +2,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
-    EArticleType, ArticleBlockType, IArticle, ArticleDetails,
+    EArticleType, EArticleBlockType, IArticle,
 } from 'entities/article';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
@@ -27,7 +27,7 @@ const article: IArticle = {
     blocks: [
         {
             id: '1',
-            type: ArticleBlockType.TEXT,
+            type: EArticleBlockType.TEXT,
             title: 'Заголовок этого блока',
             paragraphs: [
                 'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
@@ -37,12 +37,12 @@ const article: IArticle = {
         },
         {
             id: '4',
-            type: ArticleBlockType.CODE,
+            type: EArticleBlockType.CODE,
             code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
         },
         {
             id: '5',
-            type: ArticleBlockType.TEXT,
+            type: EArticleBlockType.TEXT,
             title: 'Заголовок этого блока',
             paragraphs: [
                 'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',

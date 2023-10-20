@@ -1,5 +1,8 @@
 {
   "about": {
     "site": "site"
+  },
+  "admin": {
+    "panel": "panel"
   }
 }

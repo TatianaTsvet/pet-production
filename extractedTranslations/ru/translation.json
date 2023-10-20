@@ -1,13 +1,62 @@
 {
+  "": "",
   "about": {
     "site": "site"
+  },
+  "admin": {
+    "panel": "panel"
   },
   "age": {
     "error": "error"
   },
+  "article": {
+    "back": {
+      "list": "list"
+    },
+    "comments": "comments",
+    "create": "create",
+    "error": {
+      "on": {
+        "loading": "loading"
+      }
+    },
+    "read": {
+      "more": "more"
+    }
+  },
+  "articles": {
+    "all": "all",
+    "create": {
+      "new": {
+        "article": "article"
+      }
+    },
+    "economics": "economics",
+    "edit": {
+      "by": {
+        "id": "id"
+      }
+    },
+    "not": {
+      "found": "found"
+    },
+    "recommend": "recommend",
+    "science": "science",
+    "search": "search",
+    "upload": {
+      "error": "error"
+    }
+  },
   "choose": {
     "country": "country",
     "currency": "currency"
+  },
+  "comments": {
+    "absent": "absent",
+    "enter": {
+      "text": "text"
+    },
+    "send": "send"
   },
   "data": {
     "error": "error"
@@ -23,6 +72,7 @@
   },
   "home": "home",
   "lang": "lang",
+  "language": "language",
   "log": {
     "out": "out"
   },
@@ -33,10 +83,12 @@
     "error": "error"
   },
   "page": {
+    "forbidden": "forbidden",
     "loading": "loading",
     "not": {
       "found": "found"
-    }
+    },
+    "profile": "profile"
   },
   "profile": {
     "age": "age",

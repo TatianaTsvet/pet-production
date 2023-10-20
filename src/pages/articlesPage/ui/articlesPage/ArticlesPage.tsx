@@ -10,7 +10,6 @@ import { useSearchParams } from 'react-router-dom';
 import cls from './articlesPage.module.scss';
 import { ArticlesPageFilters } from '../articlesPageFilters';
 import {
-    articlesPageActions,
     articlesPageReducer,
     fetchNextArticlesPage,
     getArticles,

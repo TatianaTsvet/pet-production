@@ -61,6 +61,7 @@ module.exports = {
             consistent: true,
         }],
         'fsd-architecture-imports/path-checker': 'error',
+        'import/no-cycle': ['error', { maxDepth: 1 }],
     },
     globals: {
         __IS_DEV__: true,

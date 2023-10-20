@@ -1,8 +1,8 @@
 {
   "test.example": "Test example",
   "translate": "Translate",
-  "lang": "English",
-  "lang.short": "EN",
+  "language": "English",
+  "lang": "EN",
   "toggle": "toggle",
   "enter": "Enter",
   "log.out": "Log Out",

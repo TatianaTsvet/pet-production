@@ -12,7 +12,7 @@ import {
 } from 'shared/ui';
 import {
     ArticleBlock,
-    ArticleBlockType,
+    EArticleBlockType,
     fetchArticleById,
     articleDetailsReducer,
     getArticleDetailsData,
@@ -47,7 +47,7 @@ const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
-        case ArticleBlockType.CODE:
+        case EArticleBlockType.CODE:
             return (
                 <ArticleCodeBlockComponent
                     key={block.id}
@@ -55,7 +55,7 @@ const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     className={cls.block}
                 />
             );
-        case ArticleBlockType.IMAGE:
+        case EArticleBlockType.IMAGE:
             return (
                 <ArticleImageBlockComponent
                     key={block.id}
@@ -63,7 +63,7 @@ const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     className={cls.block}
                 />
             );
-        case ArticleBlockType.TEXT:
+        case EArticleBlockType.TEXT:
             return (
                 <ArticleTextBlockComponent
                     key={block.id}

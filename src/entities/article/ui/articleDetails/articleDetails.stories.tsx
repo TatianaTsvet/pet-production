@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ArticleBlockType, EArticleType, IArticle } from '../../model';
+import { EArticleBlockType, EArticleType, IArticle } from '../../model';
 import ArticleDetails from './ArticleDetails';
 
 export default {
@@ -24,7 +24,7 @@ const article: IArticle = {
     blocks: [
         {
             id: '1',
-            type: ArticleBlockType.TEXT,
+            type: EArticleBlockType.TEXT,
             title: 'Заголовок этого блока',
             paragraphs: [
                 'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или',
@@ -46,13 +46,13 @@ const article: IArticle = {
         },
         {
             id: '4',
-            type: ArticleBlockType.CODE,
+            type: EArticleBlockType.CODE,
             // eslint-disable-next-line max-len
             code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
         },
         {
             id: '5',
-            type: ArticleBlockType.TEXT,
+            type: EArticleBlockType.TEXT,
             title: 'Заголовок этого блока',
             paragraphs: [
                 // eslint-disable-next-line max-len
