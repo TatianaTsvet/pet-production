@@ -2,6 +2,9 @@
   "about": {
     "site": ""
   },
+  "admin": {
+    "panel": ""
+  },
   "main": {
     "page": ""
   }

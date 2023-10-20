@@ -1,11 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { Suspense, memo, useCallback } from 'react';
 import { AddCommentForm } from 'features/addCommentForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { CommentList } from 'entities/comment';
 import { useInitialEffect } from 'shared/lib';
-import { ETextSize, VStack, Text } from 'shared/ui';
+import { ETextSize, VStack, Text, Skeleton } from 'shared/ui';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -15,7 +15,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 
 interface IArticleDetailsCommentsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const ArticleDetailsComments = (props: IArticleDetailsCommentsProps) => {
@@ -39,7 +39,10 @@ const ArticleDetailsComments = (props: IArticleDetailsCommentsProps) => {
                 size={ETextSize.L}
                 title={t('article.comments')}
             />
-            <AddCommentForm onSendComment={onSendComment} />
+            <Suspense fallback={<Skeleton />}>
+                <AddCommentForm onSendComment={onSendComment} />
+            </Suspense>
+
             <CommentList
                 isLoading={commentsIsLoading}
                 comments={comments}

@@ -1,11 +1,20 @@
-import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { StoreProvider } from 'app/providers/StoreProvider';
+import { ErrorBoundary, ThemeProvider } from 'app/providers';
+import { createRoot } from 'react-dom/client';
 import App from './app/App';
-import { ErrorBoundary, ThemeProvider, StoreProvider } from './app/providers';
-import './shared/config/i18n/i18n';
 import 'app/styles/index.scss';
+import './shared/config/i18n/i18n';
 
-render(
+const container = document.getElementById('root');
+
+if (!container) {
+    throw new Error('Container is not found. Error is on mounting');
+}
+
+const root = createRoot(container);
+
+root.render(
     <BrowserRouter>
         <StoreProvider>
             <ErrorBoundary>
@@ -15,5 +24,4 @@ render(
             </ErrorBoundary>
         </StoreProvider>
     </BrowserRouter>,
-    document.getElementById('root'),
 );

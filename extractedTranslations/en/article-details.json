@@ -15,12 +15,26 @@
   },
   "articles": {
     "all": "",
+    "create": {
+      "new": {
+        "article": ""
+      }
+    },
     "economics": "",
+    "edit": {
+      "by": {
+        "id": ""
+      }
+    },
     "not": {
       "found": ""
     },
+    "recommend": "",
     "science": "",
-    "search": ""
+    "search": "",
+    "upload": {
+      "error": ""
+    }
   },
   "page": {
     "not": {

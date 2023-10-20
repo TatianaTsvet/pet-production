@@ -2,8 +2,14 @@
   "about": {
     "site": "site"
   },
+  "admin": {
+    "panel": ""
+  },
   "age": {
     "error": "error"
+  },
+  "article": {
+    "create": ""
   },
   "choose": {
     "country": "",
@@ -38,10 +44,12 @@
     "error": "error"
   },
   "page": {
+    "forbidden": "",
     "loading": "loading",
     "not": {
       "found": "found"
-    }
+    },
+    "profile": ""
   },
   "profile": {
     "age": "age",

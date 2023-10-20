@@ -7,3 +7,10 @@ export const RouteDecorator = (story: () => Story) => (
     //     {story()}
     // </BrowserRouter>
 );
+
+// export const RouteDecorator = (StoryComponent: Story) => (
+
+//     // <BrowserRouter>
+//     //     <StoryComponent />
+//     // </BrowserRouter>
+// );

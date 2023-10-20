@@ -1,8 +1,8 @@
 // import { IArticleDetailsCommentsSchema } from './articleDetailsCommentsSchema';
 // import { IArticleDetailsRecommendationsSchema } from './articleDetailsRecommendationsSchema';
 
-export { IArticleDetailsCommentsSchema } from './articleDetailsCommentsSchema';
-export { IArticleDetailsRecommendationsSchema } from './articleDetailsRecommendationsSchema';
+export type { IArticleDetailsCommentsSchema } from './articleDetailsCommentsSchema';
+export type { IArticleDetailsRecommendationsSchema } from './articleDetailsRecommendationsSchema';
 
 // just for studying, bad example
 // export interface IArticleDetailsPageSchema {

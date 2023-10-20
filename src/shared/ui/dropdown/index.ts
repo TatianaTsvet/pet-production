@@ -1,1 +1,2 @@
-export { IDropdownItem, Dropdown } from './Dropdown';
+export { Dropdown } from './Dropdown';
+export type { IDropdownItem } from './Dropdown';

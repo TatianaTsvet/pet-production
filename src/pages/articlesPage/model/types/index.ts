@@ -1,1 +1,1 @@
-export { IArticlesPageSchema } from './articlesPageSchema';
+export type { IArticlesPageSchema } from './articlesPageSchema';

@@ -22,7 +22,7 @@ const SidebarItem: FC<ISidebarItemProps> = memo((props: ISidebarItemProps) => {
         >
             <item.icon className={cls.icon} />
             <span className={cls.link}>
-                {t(item.text)}
+                {t<string>(item.text)}
             </span>
         </AppLink>
     );
