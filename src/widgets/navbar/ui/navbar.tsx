@@ -9,12 +9,15 @@ import {
     EButtonTheme,
     Dropdown,
     Avatar,
+    HStack,
+    Icon,
 } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/user';
 import { LoginModal } from 'features/authByUserName';
 import { RoutePath } from 'shared/config';
+import NotificationIcon from 'shared/asserts/icons/notification.svg';
 import cls from './navbar.module.scss';
 
 interface INavbarProps {
@@ -43,6 +46,7 @@ const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
     }, [dispatch]);
 
     const isAdminPanelAvailable = isAdmin || isManager;
+    console.log(isAdmin, isManager);
 
     return (
         <header className={classNames(cls.navbar, {}, [className])}>
@@ -55,37 +59,34 @@ const Navbar: FC<INavbarProps> = memo(({ className }: INavbarProps) => {
                         >
                             {t('article.create')}
                         </AppLink>
-                        <Dropdown
-                            className={cls.dropdown}
-                            items={[
-                                ...(isAdminPanelAvailable ? [{
-                                    content: t('admin.panel'),
-                                    href: RoutePath.admin_panel,
-                                }] : []),
-                                {
-                                    content: t('log.out'),
-                                    onClick: onLogOut,
-                                },
-                                {
-                                    content: t('page.profile'),
-                                    href: RoutePath.profile + authData.id,
-                                },
-                            ]}
-                            trigger={(
-                                <Avatar
-                                    size={30}
-                                    src={authData.avatar}
-                                />
-                            )}
-                            direction="bottom left"
-                        />
-                        {/* <Button
-                            theme={EButtonTheme.CLEAR_INVERTED}
-                            className={cls.links}
-                            onClick={onLogOut}
-                        >
-                            {t('log.out')}
-                        </Button> */}
+                        <HStack gap="16" className={cls.actions}>
+                            <Button theme={EButtonTheme.CLEAR}>
+                                <Icon inverted Svg={NotificationIcon} />
+                            </Button>
+                            <Dropdown
+                                items={[
+                                    ...(isAdminPanelAvailable ? [{
+                                        content: t('admin.panel'),
+                                        href: RoutePath.admin_panel,
+                                    }] : []),
+                                    {
+                                        content: t('log.out'),
+                                        onClick: onLogOut,
+                                    },
+                                    {
+                                        content: t('page.profile'),
+                                        href: RoutePath.profile + authData.id,
+                                    },
+                                ]}
+                                trigger={(
+                                    <Avatar
+                                        size={30}
+                                        src={authData.avatar}
+                                    />
+                                )}
+                                direction="bottom left"
+                            />
+                        </HStack>
                     </div>
                 ) : (
                     <div className={cls.main}>
